@@ -1,0 +1,2 @@
+@prefix enr: <https://example.org/oe/enron/> . @prefix oe: <https://example.org/oe#> .
+enr:re_Shapiro_ISOPoliticization oe:hasCoreContext enr:qc_ISOCongestionReformHalted .

@@ -1,0 +1,8 @@
+# X2 (supplementary): how each voice reaches the record (direct vs quoted/reported speech) and through whom
+PREFIX oe: <https://example.org/oe#>
+PREFIX oex: <https://example.org/oe/ext#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?agent ?internal ?voice (COUNT(DISTINCT ?s) AS ?statements) (GROUP_CONCAT(DISTINCT STR(?m); separator=" ") AS ?mediators) WHERE {
+  ?s prov:wasGeneratedBy/prov:wasAssociatedWith ?agent ; oex:voiceMode ?voice .
+  OPTIONAL { ?agent oex:internalToEnron ?internal } OPTIONAL { ?s oex:mediatedBy ?m }
+} GROUP BY ?agent ?internal ?voice ORDER BY ?internal ?agent

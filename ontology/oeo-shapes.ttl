@@ -1,0 +1,386 @@
+@prefix oe:   <https://example.org/oe#> .
+@prefix oesh: <https://example.org/oe/shapes#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+
+#################################################################
+# OEO -- SHACL module (data integrity, closed-world checks)
+# Validate data together with the OWL module (oeo.ttl) as asserted
+# triples, so that sh:class and sh:targetClass can follow
+# rdfs:subClassOf; no OWL/RDFS inference is required.
+#################################################################
+
+<https://example.org/oe/shapes>
+    a owl:Ontology ;
+    dct:title "OEO SHACL shapes"@en ;
+    owl:versionInfo "0.2.1" ;
+    rdfs:seeAlso <https://example.org/oe> ;
+    sh:declare
+        [ sh:prefix "oe" ;   sh:namespace "https://example.org/oe#"^^xsd:anyURI ] ,
+        [ sh:prefix "prov" ; sh:namespace "http://www.w3.org/ns/prov#"^^xsd:anyURI ] ,
+        [ sh:prefix "rdf" ;  sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ] .
+
+#################################################################
+# Scene and QualitativeChange
+#################################################################
+
+oesh:SceneShape
+    a sh:NodeShape ;
+    sh:targetClass oe:Scene ;
+    sh:property [
+        sh:path oe:hasExtent ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class oe:SpatiotemporalExtent ;
+        sh:message "A Scene must have exactly one oe:hasExtent whose value is an oe:SpatiotemporalExtent."@en
+    ] ;
+    sh:property [
+        sh:path oe:scenePartOf ;
+        sh:class oe:Scene ;
+        sh:message "The value of oe:scenePartOf must be an oe:Scene."@en
+    ] .
+
+oesh:QualitativeChangeShape
+    a sh:NodeShape ;
+    sh:targetClass oe:QualitativeChange , oe:DirectQC , oe:IndirectQC ;
+    sh:property [
+        sh:path oe:hasChangingObject ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class oe:ChangingObject ;
+        sh:message "A QualitativeChange must have exactly one oe:hasChangingObject whose value is an oe:ChangingObject."@en
+    ] ;
+    sh:property [
+        sh:path oe:hasChangingQuality ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class oe:ChangingQuality ;
+        sh:message "A QualitativeChange must have exactly one oe:hasChangingQuality whose value is an oe:ChangingQuality."@en
+    ] ;
+    sh:property [
+        sh:path oe:occursIn ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class oe:Scene ;
+        sh:message "A QualitativeChange must have exactly one oe:occursIn whose value is an oe:Scene."@en
+    ] ;
+    sh:property [
+        sh:path oe:refinesChange ;
+        sh:class oe:QualitativeChange ;
+        sh:message "The value of oe:refinesChange must be an oe:QualitativeChange."@en
+    ] .
+
+#################################################################
+# RecognizedEvent
+#################################################################
+
+oesh:RecognizedEventShape
+    a sh:NodeShape ;
+    sh:targetClass oe:RecognizedEvent , oe:IndividualRE , oe:CollectiveRE ;
+    sh:property [
+        sh:path oe:individuatedBy ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class oe:Agent ;
+        sh:message "A RecognizedEvent must have exactly one oe:individuatedBy whose value is an oe:Agent."@en
+    ] ;
+    sh:property [
+        sh:path oe:hasFocalPart ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class oe:QualitativeChange ;
+        sh:message "A RecognizedEvent must have exactly one oe:hasFocalPart whose value is an oe:QualitativeChange."@en
+    ] ;
+    sh:property [
+        sh:path oe:hasCoreContext ;
+        sh:minCount 1 ;
+        sh:class oe:QualitativeChange ;
+        sh:message "A RecognizedEvent must have at least one oe:hasCoreContext whose values are oe:QualitativeChanges."@en
+    ] ;
+    sh:property [
+        sh:path oe:hasCharacterizingContext ;
+        sh:class oe:QualitativeChange ;
+        sh:message "Values of oe:hasCharacterizingContext must be oe:QualitativeChanges."@en
+    ] ;
+    sh:property [
+        sh:path oe:hasExternalContext ;
+        sh:class oe:QualitativeChange ;
+        sh:message "Values of oe:hasExternalContext must be oe:QualitativeChanges."@en
+    ] ;
+    sh:property [
+        sh:path oe:classifiedBy ;
+        sh:minCount 1 ;
+        sh:class oe:EventType ;
+        sh:message "A RecognizedEvent must have at least one oe:classifiedBy whose values are oe:EventTypes."@en
+    ] ;
+    sh:property [
+        sh:path prov:startedAtTime ;
+        sh:minCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "A RecognizedEvent must have at least one prov:startedAtTime of datatype xsd:dateTime."@en
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Event-role duplication: the same QualitativeChange ({?change}) occupies two event roles ({?role1}, {?role2}) in one RecognizedEvent."@en ;
+        sh:prefixes <https://example.org/oe/shapes> ;
+        sh:select """
+            SELECT $this ?change ?role1 ?role2
+            WHERE {
+                $this ?role1 ?change .
+                $this ?role2 ?change .
+                FILTER(?role1 IN (oe:hasFocalPart, oe:hasCoreContext, oe:hasCharacterizingContext, oe:hasExternalContext))
+                FILTER(?role2 IN (oe:hasFocalPart, oe:hasCoreContext, oe:hasCharacterizingContext, oe:hasExternalContext))
+                FILTER(STR(?role1) < STR(?role2))
+            }
+        """
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Scene coherence: the QualitativeChange {?change} used via {?role} occurs in {?changeScene}, not in the Scene of the focal part ({?focalScene})."@en ;
+        sh:prefixes <https://example.org/oe/shapes> ;
+        sh:select """
+            SELECT $this ?change ?role ?focalScene ?changeScene
+            WHERE {
+                $this oe:hasFocalPart/oe:occursIn ?focalScene .
+                $this ?role ?change .
+                FILTER(?role IN (oe:hasCoreContext, oe:hasCharacterizingContext, oe:hasExternalContext))
+                ?change oe:occursIn ?changeScene .
+                FILTER(?changeScene != ?focalScene)
+            }
+        """
+    ] .
+
+oesh:IndividualREShape
+    a sh:NodeShape ;
+    sh:targetClass oe:IndividualRE ;
+    sh:property [
+        sh:path oe:individuatedBy ;
+        sh:class oe:IndividualAgent ;
+        sh:message "An IndividualRE must be individuated by an oe:IndividualAgent."@en
+    ] .
+
+oesh:CollectiveREShape
+    a sh:NodeShape ;
+    sh:targetClass oe:CollectiveRE ;
+    sh:property [
+        sh:path oe:individuatedBy ;
+        sh:class oe:CollectiveAgent ;
+        sh:message "A CollectiveRE must be individuated by an oe:CollectiveAgent."@en
+    ] .
+
+#################################################################
+# InterpretationAct and RelationalInterpretation
+#################################################################
+
+oesh:InterpretationActShape
+    a sh:NodeShape ;
+    sh:targetClass oe:InterpretationAct , oe:RelationalInterpretation ;
+    sh:property [
+        sh:path oe:interprets ;
+        sh:minCount 1 ;
+        sh:class oe:RecognizedEvent ;
+        sh:message "An InterpretationAct must interpret at least one oe:RecognizedEvent (never a Scene or a QualitativeChange)."@en
+    ] ;
+    sh:property [
+        sh:path prov:wasAssociatedWith ;
+        sh:minCount 1 ;
+        sh:class oe:Agent ;
+        sh:message "An InterpretationAct must record at least one prov:wasAssociatedWith whose value is an oe:Agent."@en
+    ] ;
+    sh:property [
+        sh:path oe:basedOn ;
+        sh:class oe:Worldview ;
+        sh:message "The value of oe:basedOn must be an oe:Worldview (oe:basedOn itself is optional)."@en
+    ] ;
+    sh:property [
+        sh:path prov:startedAtTime ;
+        sh:minCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "An InterpretationAct must have at least one prov:startedAtTime of datatype xsd:dateTime."@en
+    ] ;
+    sh:property [
+        sh:path oe:producedIn ;
+        sh:class oe:Context ;
+        sh:message "The value of oe:producedIn must be an oe:Context."@en
+    ] ;
+    sh:property [
+        sh:path oe:hasInterpretationType ;
+        sh:class oe:InterpretationType ;
+        sh:message "The value of oe:hasInterpretationType must be an oe:InterpretationType."@en
+    ] ;
+    sh:property [
+        sh:path oe:hasTemporalOrientation ;
+        sh:class oe:TemporalOrientation ;
+        sh:message "The value of oe:hasTemporalOrientation must be an oe:TemporalOrientation."@en
+    ] ;
+    sh:property [
+        sh:path oe:hasInterpretationCriterion ;
+        sh:class oe:InterpretationCriterion ;
+        sh:message "The value of oe:hasInterpretationCriterion must be an oe:InterpretationCriterion."@en
+    ] ;
+    sh:property [
+        sh:path oe:reinterprets ;
+        sh:class oe:InterpretationAct ;
+        sh:message "The value of oe:reinterprets must be an oe:InterpretationAct."@en
+    ] .
+
+# Completeness of the dimensions compared by CQ3 and CQ5 (Warning: optional in OWL, but CQ answers are incomplete without them)
+oesh:InterpretationDimensionsShape
+    a sh:NodeShape ;
+    sh:targetClass oe:InterpretationAct , oe:RelationalInterpretation ;
+    # severity is stated on each property shape (it is not inherited from the node shape)
+    sh:property [ sh:path oe:producedIn ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "Warning: InterpretationAct without oe:producedIn; CQ3 and CQ5 cannot compare its Context."@en ] ;
+    sh:property [ sh:path oe:hasInterpretationType ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "Warning: InterpretationAct without oe:hasInterpretationType; CQ3 and CQ5 cannot compare it."@en ] ;
+    sh:property [ sh:path oe:hasTemporalOrientation ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "Warning: InterpretationAct without oe:hasTemporalOrientation; CQ3 and CQ5 cannot compare it."@en ] ;
+    sh:property [ sh:path oe:hasInterpretationCriterion ; sh:minCount 1 ; sh:severity sh:Warning ;
+        sh:message "Warning: InterpretationAct without oe:hasInterpretationCriterion; CQ3 cannot compare it."@en ] .
+
+oesh:ReinterpretationShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf oe:reinterprets ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Reinterpretation order: the reinterpreting act must start after the reinterpreted act {?earlier}, but {?t} is not later than {?t0}."@en ;
+        sh:prefixes <https://example.org/oe/shapes> ;
+        sh:select """
+            SELECT $this ?earlier ?t ?t0
+            WHERE {
+                $this oe:reinterprets ?earlier .
+                $this prov:startedAtTime ?t .
+                ?earlier prov:startedAtTime ?t0 .
+                FILTER(?t <= ?t0)
+            }
+        """
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Reinterpretation target: the reinterpreting act and the reinterpreted act {?earlier} do not interpret a common RecognizedEvent."@en ;
+        sh:prefixes <https://example.org/oe/shapes> ;
+        sh:select """
+            SELECT $this ?earlier
+            WHERE {
+                $this oe:reinterprets ?earlier .
+                FILTER NOT EXISTS {
+                    $this oe:interprets ?event .
+                    ?earlier oe:interprets ?event .
+                }
+            }
+        """
+    ] .
+
+oesh:RelationalInterpretationShape
+    a sh:NodeShape ;
+    sh:targetClass oe:RelationalInterpretation ;
+    sh:property [
+        sh:path oe:relatesInterpretations ;
+        sh:minCount 2 ;
+        sh:class oe:InterpretationAct ;
+        sh:message "A RelationalInterpretation must relate at least two oe:InterpretationActs."@en
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Relational Scene coherence: the related acts {?act1} and {?act2} interpret RecognizedEvents whose focal parts occur in different Scenes ({?scene1}, {?scene2})."@en ;
+        sh:prefixes <https://example.org/oe/shapes> ;
+        sh:select """
+            SELECT $this ?act1 ?act2 ?scene1 ?scene2
+            WHERE {
+                $this oe:relatesInterpretations ?act1 , ?act2 .
+                ?act1 oe:interprets/oe:hasFocalPart/oe:occursIn ?scene1 .
+                ?act2 oe:interprets/oe:hasFocalPart/oe:occursIn ?scene2 .
+                FILTER(?scene1 != ?scene2)
+                FILTER(STR(?act1) <= STR(?act2))
+            }
+        """
+    ] .
+
+#################################################################
+# InterpretationStatement
+#################################################################
+
+oesh:InterpretationStatementShape
+    a sh:NodeShape ;
+    sh:targetClass oe:InterpretationStatement ;
+    sh:property [
+        sh:path prov:wasGeneratedBy ;
+        sh:minCount 1 ; sh:maxCount 1 ;
+        sh:class oe:InterpretationAct ;
+        sh:message "An InterpretationStatement must be generated by exactly one oe:InterpretationAct."@en
+    ] ;
+    sh:property [
+        sh:path oe:literalForm ;
+        sh:minCount 1 ;
+        sh:datatype rdf:langString ;
+        sh:message "An InterpretationStatement must have at least one oe:literalForm that is a language-tagged string."@en
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Revision order: this statement is a prov:wasRevisionOf {?old}, but its generating act does not start after the act that generated {?old} ({?t} vs {?t0})."@en ;
+        sh:prefixes <https://example.org/oe/shapes> ;
+        sh:select """
+            SELECT $this ?old ?t ?t0
+            WHERE {
+                $this prov:wasRevisionOf ?old .
+                $this prov:wasGeneratedBy/prov:startedAtTime ?t .
+                ?old prov:wasGeneratedBy/prov:startedAtTime ?t0 .
+                FILTER(?t <= ?t0)
+            }
+        """
+    ] .
+
+#################################################################
+# Context, InterpretiveTrajectory, Agent, Worldview
+#################################################################
+
+oesh:ContextShape
+    a sh:NodeShape ;
+    sh:targetClass oe:Context , oe:InstitutionalContext , oe:DialogicContext ;
+    sh:property [
+        sh:path prov:startedAtTime ;
+        sh:minCount 1 ;
+        sh:datatype xsd:dateTime ;
+        sh:message "A Context must have at least one prov:startedAtTime of datatype xsd:dateTime."@en
+    ] .
+
+oesh:InterpretiveTrajectoryShape
+    a sh:NodeShape ;
+    sh:targetClass oe:InterpretiveTrajectory ;
+    sh:property [
+        sh:path oe:hasStage ;
+        sh:minCount 1 ;
+        sh:class oe:InterpretationAct ;
+        sh:message "An InterpretiveTrajectory must have at least one oe:hasStage whose values are oe:InterpretationActs."@en
+    ] .
+
+oesh:AgentShape
+    a sh:NodeShape ;
+    sh:targetClass oe:Agent , oe:IndividualAgent , oe:CollectiveAgent ;
+    sh:property [
+        sh:path oe:playsRole ;
+        sh:class oe:OrganizationalRole ;
+        sh:message "The value of oe:playsRole must be an oe:OrganizationalRole."@en
+    ] .
+
+oesh:BasedOnSubjectShape
+    a sh:NodeShape ;
+    sh:targetSubjectsOf oe:basedOn ;
+    sh:class oe:InterpretationAct ;
+    sh:message "Only an oe:InterpretationAct may be connected to a Worldview by oe:basedOn (RecognizedEvents and Agents are not connected to Worldviews)."@en .
+
+oesh:WorldviewConnectionShape
+    a sh:NodeShape ;
+    sh:targetClass oe:Worldview ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Worldview connection: {?s} is connected to this Worldview by {?p}; the only OEO property allowed to point to a Worldview is oe:basedOn."@en ;
+        sh:prefixes <https://example.org/oe/shapes> ;
+        sh:select """
+            SELECT $this ?s ?p
+            WHERE {
+                ?s ?p $this .
+                FILTER(STRSTARTS(STR(?p), "https://example.org/oe#"))
+                FILTER(?p != oe:basedOn)
+            }
+        """
+    ] .

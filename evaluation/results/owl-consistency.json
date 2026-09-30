@@ -1,0 +1,1 @@
+{"files": ["ontology_v3/oeo.ttl", "ontology_v2/oeo-ext-v2.ttl", "enron/enron_oeo_v3.ttl"], "triples": 1806, "consistent": true, "unsatisfiable_classes": [], "eQuality_types": null, "seconds": 0.53}

@@ -1,0 +1,1101 @@
+{
+  "scene": {
+    "id": "sceneCA",
+    "label": "California electricity system, Aug 2000 - Jun 2001",
+    "place": "http://www.wikidata.org/entity/Q99",
+    "start": "2000-08-01T00:00:00Z",
+    "end": "2001-06-30T00:00:00Z"
+  },
+  "extent": {
+    "id": "extent_CA_2000_2001",
+    "label": "California (Wikidata Q99), 2000-08-01/2001-06-30",
+    "spatial": "http://www.wikidata.org/entity/Q99",
+    "temporal": "2000-08-01/2001-06-30"
+  },
+  "changes": {
+    "qc_WholesalePriceRise": {
+      "kind": "Direct",
+      "object": "CA_WholesaleMarket",
+      "quality": "wholesalePriceLevel",
+      "quality_bearer": null,
+      "label": "wholesale electricity prices rise sharply"
+    },
+    "qc_SupplyShortfall": {
+      "kind": "Direct",
+      "object": "CA_PowerSupply",
+      "quality": "reserveMargin",
+      "quality_bearer": null,
+      "label": "available supply falls short of demand"
+    },
+    "qc_SitingBlocked": {
+      "kind": "Direct",
+      "object": "CA_GenerationFleet",
+      "quality": "newCapacityAdditions",
+      "quality_bearer": null,
+      "label": "proposed plants are not sited/built"
+    },
+    "qc_SpotMarketShift": {
+      "kind": "Indirect",
+      "object": "CA_WholesaleMarket",
+      "quality": "shareOfSpotPurchases",
+      "quality_bearer": "CA_ISO_RealTimeMarket",
+      "label": "purchases shift from forward/PX to ISO spot market"
+    },
+    "qc_RetailRateFreeze": {
+      "kind": "Direct",
+      "object": "IOU_RetailTariff",
+      "quality": "costRecoveryGap",
+      "quality_bearer": null,
+      "label": "frozen retail rates open an undercollection gap"
+    },
+    "qc_UtilityInsolvency": {
+      "kind": "Direct",
+      "object": "CA_IOUs",
+      "quality": "creditworthiness",
+      "quality_bearer": null,
+      "label": "investor-owned utilities lose creditworthiness / go bankrupt"
+    },
+    "qc_PriceCapRegime": {
+      "kind": "Direct",
+      "object": "CA_MarketRules",
+      "quality": "priceCapStringency",
+      "quality_bearer": null,
+      "label": "price caps are imposed/tightened (FERC soft cap, caps on QFs)"
+    },
+    "qc_SellerMarketPower": {
+      "kind": "Direct",
+      "object": "GeneratorsAndMarketers",
+      "quality": "markupOverCompetitivePrice",
+      "quality_bearer": null,
+      "label": "sellers exercise market power (CONTESTED)"
+    },
+    "qc_ManipulationAllegations": {
+      "kind": "Direct",
+      "object": "GeneratorsAndMarketers",
+      "quality": "legalPoliticalExposure",
+      "quality_bearer": null,
+      "label": "lawsuits/investigations accuse sellers"
+    },
+    "qc_ISOGovernancePoliticization": {
+      "kind": "Indirect",
+      "object": "CA_WholesaleMarket",
+      "quality": "governanceIndependence",
+      "quality_bearer": "CA_ISO_Board",
+      "label": "ISO governance becomes politically controlled"
+    },
+    "qc_Blackouts": {
+      "kind": "Direct",
+      "object": "CA_Grid",
+      "quality": "serviceContinuity",
+      "quality_bearer": null,
+      "label": "rolling blackouts"
+    },
+    "qc_StateAsBuyer": {
+      "kind": "Direct",
+      "object": "StateOfCalifornia_DWR",
+      "quality": "procurementRole",
+      "quality_bearer": null,
+      "label": "the State (DWR) becomes the power buyer, funded by bonds"
+    },
+    "qc_PGEBankruptcy": {
+      "kind": "Direct",
+      "object": "PGE",
+      "quality": "legalStatus",
+      "quality_bearer": null,
+      "label": "PG&E files for Chapter 11 (6 Apr 2001)"
+    },
+    "qc_ISOCongestionReformHalted": {
+      "kind": "Direct",
+      "object": "CA_ISO",
+      "quality": "congestionManagementReformStatus",
+      "quality_bearer": null,
+      "label": "Cal ISO announces (30 Jan 2001) it will not file the FERC-ordered congestion-management proposal"
+    },
+    "qc_SCERescueCollapse": {
+      "kind": "Direct",
+      "object": "Davis_SCE_MOU",
+      "quality": "viability",
+      "quality_bearer": null,
+      "label": "the Davis/SoCal Edison rescue MOU collapses"
+    }
+  },
+  "refinements": {
+    "qc_PGEBankruptcy": "qc_UtilityInsolvency"
+  },
+  "agents": {
+    "Kean": {
+      "kind": "Individual",
+      "label": "Steven J. Kean",
+      "role": "EVP and Chief of Staff, Enron",
+      "source_email": "steven.kean@enron.com",
+      "internal_to_enron": true
+    },
+    "Dasovich": {
+      "kind": "Individual",
+      "label": "Jeff Dasovich",
+      "role": "Government Affairs (California), Enron",
+      "source_email": "jeff.dasovich@enron.com",
+      "internal_to_enron": true
+    },
+    "Shapiro": {
+      "kind": "Individual",
+      "label": "Richard Shapiro",
+      "role": "VP Government Affairs, Enron",
+      "source_email": "richard.shapiro@enron.com",
+      "internal_to_enron": true
+    },
+    "Tribolet": {
+      "kind": "Individual",
+      "label": "Michael Tribolet",
+      "role": "Enron representative on utility creditor matters (inferred)",
+      "source_email": "michael.tribolet@enron.com",
+      "internal_to_enron": true
+    },
+    "Walsh": {
+      "kind": "Individual",
+      "label": "Kristin Walsh",
+      "role": "Author of internal 'California Update' intelligence reports (inferred)",
+      "source_email": "kristin.walsh@enron.com",
+      "internal_to_enron": true
+    },
+    "Denne": {
+      "kind": "Individual",
+      "label": "Karen Denne",
+      "role": "Public relations, Enron",
+      "source_email": "karen.denne@enron.com",
+      "internal_to_enron": true
+    },
+    "Skilling": {
+      "kind": "Individual",
+      "label": "Jeffrey K. Skilling",
+      "role": "President and CEO, Enron",
+      "source_email": "jeff.skilling@enron.com",
+      "internal_to_enron": true
+    },
+    "EnronPublicPolicy": {
+      "kind": "Collective",
+      "label": "Enron Government Affairs / Public Policy (Kean's office)",
+      "role": "corporate public-policy function",
+      "source_email": null,
+      "internal_to_enron": true
+    },
+    "PGE": {
+      "kind": "Collective",
+      "label": "Pacific Gas and Electric Co.",
+      "role": "investor-owned utility",
+      "source_email": null,
+      "internal_to_enron": false
+    },
+    "Baum": {
+      "kind": "Individual",
+      "label": "Steve Baum",
+      "role": "President and CEO, Sempra Energy",
+      "source_email": null,
+      "internal_to_enron": false
+    },
+    "FERC": {
+      "kind": "Collective",
+      "label": "Federal Energy Regulatory Commission",
+      "role": "federal regulator",
+      "source_email": null,
+      "internal_to_enron": false
+    },
+    "SacBee": {
+      "kind": "Collective",
+      "label": "Sacramento Bee editorial board",
+      "role": "newspaper editorial board",
+      "source_email": null,
+      "internal_to_enron": false
+    },
+    "Shames": {
+      "kind": "Individual",
+      "label": "Michael Shames",
+      "role": "Utility Consumers' Action Network (consumer advocate)",
+      "source_email": null,
+      "internal_to_enron": false
+    },
+    "Davis": {
+      "kind": "Individual",
+      "label": "Gray Davis",
+      "role": "Governor of California",
+      "source_email": null,
+      "internal_to_enron": false
+    },
+    "Abraham": {
+      "kind": "Individual",
+      "label": "Spencer Abraham",
+      "role": "U.S. Secretary of Energy",
+      "source_email": null,
+      "internal_to_enron": false
+    },
+    "Angelides": {
+      "kind": "Individual",
+      "label": "Phil Angelides",
+      "role": "California State Treasurer",
+      "source_email": null,
+      "internal_to_enron": false
+    }
+  },
+  "events": {
+    "re_Kean_SupplyObstruction": {
+      "agent": "Kean",
+      "focal": [
+        "qc_WholesalePriceRise"
+      ],
+      "core": [
+        "qc_SitingBlocked",
+        "qc_SupplyShortfall"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "RegulatoryObstructionOfSupply",
+      "time": "2000-08-14T10:42:00Z",
+      "rationale": "Kean: 'demand increases and new supplies are inhibited so prices go up and shortages ensue'; siting is the indispensable background. v2: single focal part required -> price rise is focal; shortage and siting are core context."
+    },
+    "re_EnronPP_RegulationFailure": {
+      "agent": "EnronPublicPolicy",
+      "focal": [
+        "qc_SupplyShortfall"
+      ],
+      "core": [
+        "qc_SitingBlocked"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "RegulatoryFailure",
+      "time": "2000-08-14T17:42:00Z",
+      "rationale": "Talking points: demand +10% vs capacity +2%; 'The problem is regulation, not deregulation.'"
+    },
+    "re_SacBee_Manipulation": {
+      "agent": "SacBee",
+      "focal": [
+        "qc_WholesalePriceRise"
+      ],
+      "core": [
+        "qc_SellerMarketPower"
+      ],
+      "characterizing": [
+        "qc_SpotMarketShift"
+      ],
+      "external": [],
+      "event_type": "SellerManipulation",
+      "time": "2000-09-22T13:40:00Z",
+      "rationale": "Editorial 'How energy producers manipulate California': price rise explained by producers' behaviour; spot-market shift is how it happened."
+    },
+    "re_FERC_FlawedMarket": {
+      "agent": "FERC",
+      "focal": [
+        "qc_WholesalePriceRise"
+      ],
+      "core": [
+        "qc_SupplyShortfall"
+      ],
+      "characterizing": [
+        "qc_SpotMarketShift"
+      ],
+      "external": [],
+      "event_type": "MarketDesignFlaw",
+      "time": "2000-11-01T17:13:00Z",
+      "rationale": "Unjust rates due to 'seriously flawed' market structure and rules (characterizing) in conjunction with tight supply (core)."
+    },
+    "re_Tribolet_CreditorExposure": {
+      "agent": "Tribolet",
+      "focal": [
+        "qc_PGEBankruptcy"
+      ],
+      "core": [
+        "qc_RetailRateFreeze"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "CounterpartyCreditEvent",
+      "time": "2001-04-12T07:25:00Z",
+      "rationale": "PG&E bankruptcy framed as creditor-committee matter; recovery hinges on undercollection accounting."
+    },
+    "re_Dasovich_RateMisalignment": {
+      "agent": "Dasovich",
+      "focal": [
+        "qc_PGEBankruptcy"
+      ],
+      "core": [
+        "qc_RetailRateFreeze"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "RegulatoryFailure",
+      "time": "2001-04-06T13:50:00Z",
+      "rationale": "Same event core as Tribolet, different EventType: failure to realign rates 'a key determinant driving PG&E to Bankruptcy'."
+    },
+    "re_Dasovich_PriceCapHarm": {
+      "agent": "Dasovich",
+      "focal": [
+        "qc_PriceCapRegime"
+      ],
+      "core": [
+        "qc_SupplyShortfall"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "CounterproductiveIntervention",
+      "time": "2001-03-23T10:21:00Z",
+      "rationale": "Caps on QFs (focal) -> shut downs, 'reduce supply and decrease reliability' (core)."
+    },
+    "re_Abraham_SupplyEmergency": {
+      "agent": "Abraham",
+      "focal": [
+        "qc_SupplyShortfall"
+      ],
+      "core": [
+        "qc_PriceCapRegime"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "SupplyEmergency",
+      "time": "2001-03-15T00:00:00Z",
+      "rationale": "Blackouts 'appear inevitable' (focal: shortfall); price controls 'would make shortages worse' (core context)."
+    },
+    "re_Walsh_BankruptcyGame": {
+      "agent": "Walsh",
+      "focal": [
+        "qc_UtilityInsolvency"
+      ],
+      "core": [
+        "qc_StateAsBuyer"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "PoliticalBargaining",
+      "time": "2001-01-31T11:48:00Z",
+      "rationale": "Bankruptcy as the stake of a political game ('poker table in Sacramento') around Davis's rate/bond plan."
+    },
+    "re_Davis_UtilityMisconduct": {
+      "agent": "Davis",
+      "focal": [
+        "qc_Blackouts"
+      ],
+      "core": [
+        "qc_UtilityInsolvency"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "UtilityMisconduct",
+      "time": "2001-03-21T10:32:00Z",
+      "rationale": "Utilities 'partly to blame for this week's widespread blackouts because they failed to pay' QFs."
+    },
+    "re_Denne_BlameCampaign": {
+      "agent": "Denne",
+      "focal": [
+        "qc_ManipulationAllegations"
+      ],
+      "core": [
+        "qc_WholesalePriceRise"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "BlameCampaign",
+      "time": "2000-11-29T18:00:00Z",
+      "rationale": "The San Diego lawsuit (allegation) is the focal part; the unsolved price problem is the background ('fix blame rather than fix the problem')."
+    },
+    "re_Shapiro_ISOPoliticization": {
+      "agent": "Shapiro",
+      "focal": [
+        "qc_ISOGovernancePoliticization"
+      ],
+      "core": [
+        "qc_ISOCongestionReformHalted"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "GovernanceFailure",
+      "time": "2001-02-05T08:47:00Z",
+      "rationale": "'a politicized CAL ISO is a recipe for disaster'; evidence does not name a core context (S4w expected). v2: core context taken from the message Shapiro replies to (Steffes 1 Feb 2001: 'Cal ISO has filed ... that it will not be filing a new Congestion Management proposal')."
+    },
+    "re_PGE_PriceGouging": {
+      "agent": "PGE",
+      "focal": [
+        "qc_WholesalePriceRise"
+      ],
+      "core": [
+        "qc_SellerMarketPower"
+      ],
+      "characterizing": [],
+      "external": [
+        "qc_PriceCapRegime"
+      ],
+      "event_type": "PriceGouging",
+      "time": "2000-12-15T00:00:00Z",
+      "rationale": "'exposed to price gouging'; FERC remedies (external context) insufficient."
+    },
+    "re_Baum_PriceGouging": {
+      "agent": "Baum",
+      "focal": [
+        "qc_WholesalePriceRise"
+      ],
+      "core": [
+        "qc_SellerMarketPower"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "PriceGouging",
+      "time": "2000-08-10T05:15:00Z",
+      "rationale": "out-of-state generators 'gouging' California residents."
+    },
+    "re_Shames_SellerControl": {
+      "agent": "Shames",
+      "focal": [
+        "qc_WholesalePriceRise"
+      ],
+      "core": [
+        "qc_SellerMarketPower"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "SellerManipulation",
+      "time": "2000-09-01T13:56:00Z",
+      "rationale": "customers subjected to market prices in 'a market controlled by the sellers of power and their cronies'."
+    },
+    "re_Skilling_RegulatoryDesign": {
+      "agent": "Skilling",
+      "focal": [
+        "qc_SpotMarketShift"
+      ],
+      "core": [
+        "qc_RetailRateFreeze"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "RegulatoryFailure",
+      "time": "2001-06-21T00:00:00Z",
+      "rationale": "consumers 'thrown totally to the mercy of the spot market' (focal) because utilities were prevented from passing on costs (core)."
+    },
+    "re_Angelides_SCEInsolvency": {
+      "agent": "Angelides",
+      "focal": [
+        "qc_UtilityInsolvency"
+      ],
+      "core": [
+        "qc_SCERescueCollapse"
+      ],
+      "characterizing": [],
+      "external": [],
+      "event_type": "InsolvencyOutlook",
+      "time": "2001-05-22T00:00:00Z",
+      "rationale": "Doubly mediated (Walsh's source): SoCal 'would go bankrupt'. No core context attested. v2: core context from the same report: 'He added that the Davis/SoCal MOU is dead'."
+    }
+  },
+  "worldviews": {
+    "wv_MarketLiberal": "competitive markets work; crises stem from regulatory interference and insufficient deregulation",
+    "wv_CreditorProtection": "exposures must be protected and recovered; counterparty solvency is the central fact",
+    "wv_PoliticalRealism": "outcomes are driven by political interests and bargaining among actors",
+    "wv_ReputationManagement": "public blame attribution is a communicative contest to be managed",
+    "wv_RegulatedUtility": "utilities are victims of wholesale sellers; regulators must cap prices and order refunds",
+    "wv_RegulatoryBalancing": "rates must be just and reasonable; structural flaws of market design explain outcomes",
+    "wv_ConsumerProtection": "markets controlled by sellers harm ratepayers; public authority must protect consumers"
+  },
+  "acts": {
+    "A01": {
+      "agent": "Kean",
+      "interprets": [
+        "re_Kean_SupplyObstruction"
+      ],
+      "ctx": [
+        "Dialogic",
+        "internal e-mail to government-affairs team"
+      ],
+      "t": "2000-08-14T10:42:00Z",
+      "type": "exemplary",
+      "ori": "presentist",
+      "crit": "MW proposed but not sited",
+      "ev": "<14290787.1075846166614.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "there has not been enough deregulation; the government is still very much in the way."
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A02": {
+      "agent": "Kean",
+      "interprets": [
+        "re_Kean_SupplyObstruction"
+      ],
+      "ctx": [
+        "Dialogic",
+        "e-mail preparing an advisory-council discussion"
+      ],
+      "t": "2000-08-29T11:38:00Z",
+      "type": "critical",
+      "ori": "presentist",
+      "crit": "price data on gasoline, electricity, natural gas",
+      "ev": "<13685960.1075846171560.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "While it's premature to say we have an energy crisis, we are witnessing the triple threat of high summer gasoline prices, spiking electricity prices, and high natural gas prices"
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A03": {
+      "agent": "Kean",
+      "interprets": [
+        "re_Kean_SupplyObstruction"
+      ],
+      "ctx": [
+        "Dialogic",
+        "e-mail summarizing own legislative testimony"
+      ],
+      "t": "2000-09-13T09:44:00Z",
+      "type": "exemplary",
+      "ori": "prospective",
+      "crit": "supply-demand reasoning",
+      "ev": "<31087568.1075846174117.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "reinterprets": [
+        "A02"
+      ],
+      "quotes": [
+        "the problem is fairly straightforward (demand increases and new supplies are inhibited so prices go up and shortages ensue ... sound familiar?)"
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A04": {
+      "agent": "EnronPublicPolicy",
+      "interprets": [
+        "re_EnronPP_RegulationFailure"
+      ],
+      "ctx": [
+        "Institutional",
+        "executive-committee talking points"
+      ],
+      "t": "2000-08-14T17:42:00Z",
+      "type": "exemplary",
+      "ori": "presentist",
+      "crit": "demand growth vs capacity growth statistics",
+      "ev": "<716812.1075846166852.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "the market is working, regulation is not.",
+        "The problem is regulation, not deregulation."
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A05": {
+      "agent": "SacBee",
+      "interprets": [
+        "re_SacBee_Manipulation"
+      ],
+      "ctx": [
+        "Institutional",
+        "published newspaper editorial"
+      ],
+      "t": "2000-09-22T13:40:00Z",
+      "type": "critical",
+      "ori": "retrospective",
+      "crit": "PX price data (Aug 1999 vs Aug 2000)",
+      "ev": "<8415828.1075842977222.JavaMail.evans@thyme>",
+      "voice": "quotedSpeech",
+      "via": [
+        "Dasovich"
+      ],
+      "quotes": [
+        "This is a telltale sign that California's electricity market is working for those who own power plants, not those who pay the bills that are poised to rise."
+      ],
+      "worldview": "wv_ConsumerProtection"
+    },
+    "A06": {
+      "agent": "FERC",
+      "interprets": [
+        "re_FERC_FlawedMarket"
+      ],
+      "ctx": [
+        "Institutional",
+        "FERC staff report and proposed order"
+      ],
+      "t": "2000-11-01T17:13:00Z",
+      "type": "critical",
+      "ori": "retrospective",
+      "crit": "staff investigation of summer 2000 markets",
+      "ev": "<3209089.1075856267861.JavaMail.evans@thyme>",
+      "voice": "reportedSpeech",
+      "via": [
+        "EEI_AllianceInfoAlert"
+      ],
+      "quotes": [
+        "California ratepayers were subjected to unjust and unreasonable power rates due to California's \"seriously flawed\" market structure and rules in conjunction with tight demand and supply conditions throughout the West."
+      ],
+      "worldview": "wv_RegulatoryBalancing"
+    },
+    "A07": {
+      "agent": "Kean",
+      "relational": [
+        "A06",
+        "A05"
+      ],
+      "interprets": [
+        "re_FERC_FlawedMarket",
+        "re_SacBee_Manipulation"
+      ],
+      "ctx": [
+        "Dialogic",
+        "e-mail commenting on an article draft"
+      ],
+      "t": "2000-11-01T17:15:00Z",
+      "type": "critical",
+      "ori": "presentist",
+      "crit": "FERC staff report",
+      "ev": "<13411164.1075846188375.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "instead of blaming generators and marketers the report blames the structure of the market for California's woes."
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A08": {
+      "agent": "Denne",
+      "interprets": [
+        "re_Denne_BlameCampaign"
+      ],
+      "ctx": [
+        "Institutional",
+        "official press statement on San Diego lawsuit"
+      ],
+      "t": "2000-11-29T18:00:00Z",
+      "type": "critical",
+      "ori": "retrospective",
+      "crit": "prior regulatory investigations",
+      "ev": "<29378922.1075843052237.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "denies": [
+        "qc_SellerMarketPower"
+      ],
+      "quotes": [
+        "This is a publicity stunt. Three separate federal and state regulatory agencies have investigated the allegations rehashed in this lawsuit and found that no market power was exercised in California."
+      ],
+      "worldview": "wv_ReputationManagement"
+    },
+    "A09": {
+      "agent": "Kean",
+      "interprets": [
+        "re_Kean_SupplyObstruction"
+      ],
+      "ctx": [
+        "Dialogic",
+        "internal e-mail on gas-market talking points"
+      ],
+      "t": "2000-12-12T15:07:00Z",
+      "type": "critical",
+      "ori": "presentist",
+      "crit": "openness and competitiveness of wholesale markets",
+      "ev": "<14658458.1075843072589.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "Unless we have strong evidence to the contrary, it seems to me that wholesale markets are working .... they are open and they are competitive."
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A10": {
+      "agent": "PGE",
+      "interprets": [
+        "re_PGE_PriceGouging"
+      ],
+      "ctx": [
+        "Institutional",
+        "company statement on FERC order of 15 Dec 2000"
+      ],
+      "t": "2000-12-15T00:00:00Z",
+      "tb": "inferred-from-text",
+      "type": "critical",
+      "ori": "prospective",
+      "crit": "assessment of FERC order remedies",
+      "ev": "<10005754.1075844135318.JavaMail.evans@thyme>",
+      "voice": "quotedSpeech",
+      "via": [
+        "NewsOutlet_unnamed",
+        "Fawcett"
+      ],
+      "quotes": [
+        "The California wholesale market is broken. And we are extremely disappointed by the insufficiency of today's FERC order,"
+      ],
+      "worldview": "wv_RegulatedUtility"
+    },
+    "A11": {
+      "agent": "Walsh",
+      "interprets": [
+        "re_Walsh_BankruptcyGame"
+      ],
+      "ctx": [
+        "Institutional",
+        "internal intelligence briefing 'California Update'"
+      ],
+      "t": "2001-01-31T11:48:00Z",
+      "type": "genetic",
+      "ori": "prospective",
+      "crit": "source intelligence",
+      "ev": "<13095701.1075856223012.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "The threat of bankruptcy is significantly diminishing as Davis hatches a plan to 1) pass on \"court ordered rate increases\" and 2) issue revenue bonds."
+      ],
+      "worldview": "wv_PoliticalRealism"
+    },
+    "A12": {
+      "agent": "Walsh",
+      "interprets": [
+        "re_Walsh_BankruptcyGame"
+      ],
+      "ctx": [
+        "Institutional",
+        "internal intelligence briefing 'California Update #2'"
+      ],
+      "t": "2001-02-23T22:22:00Z",
+      "type": "genetic",
+      "ori": "prospective",
+      "crit": "reading of Davis's political situation",
+      "ev": "<17720581.1075840903917.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "reinterprets": [
+        "A11"
+      ],
+      "quotes": [
+        "back at the poker table in Sacramento the situation continues to drift toward bankruptcy."
+      ],
+      "worldview": "wv_PoliticalRealism"
+    },
+    "A13": {
+      "agent": "Abraham",
+      "interprets": [
+        "re_Abraham_SupplyEmergency"
+      ],
+      "ctx": [
+        "Institutional",
+        "U.S. Senate committee testimony"
+      ],
+      "t": "2001-03-15T00:00:00Z",
+      "tb": "inferred-from-text",
+      "type": "exemplary",
+      "ori": "prospective",
+      "crit": "supply-demand principle",
+      "ev": "<29321285.1075843394361.JavaMail.evans@thyme>",
+      "voice": "quotedSpeech",
+      "via": [
+        "SF_Chronicle",
+        "Dasovich"
+      ],
+      "quotes": [
+        "Any action we take must either help increase supply or reduce demand. . . . Price caps will not increase supply or reduce demand."
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A14": {
+      "agent": "Dasovich",
+      "relational": [
+        "A13",
+        "A03"
+      ],
+      "interprets": [
+        "re_Abraham_SupplyEmergency"
+      ],
+      "ctx": [
+        "Dialogic",
+        "internal e-mail forwarding a news story"
+      ],
+      "t": "2001-03-16T12:09:00Z",
+      "type": "critical",
+      "ori": "presentist",
+      "crit": "recognition of own prior message",
+      "ev": "<29321285.1075843394361.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "rationale": "'I've heard that somewhere before' implicitly relates Abraham's line to Enron's own earlier line (A03); the referent is an annotator judgment.",
+      "quotes": [
+        "Note Abraham's quote in p.#3 re: \"must increase supply or decrease demand.\" I've heard that somewhere before."
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A15": {
+      "agent": "Davis",
+      "interprets": [
+        "re_Davis_UtilityMisconduct"
+      ],
+      "ctx": [
+        "Institutional",
+        "governor's public statement"
+      ],
+      "t": "2001-03-21T10:32:00Z",
+      "type": "critical",
+      "ori": "retrospective",
+      "crit": "unpaid QF bills",
+      "ev": "<8069579.1075843400180.JavaMail.evans@thyme>",
+      "voice": "quotedSpeech",
+      "via": [
+        "AssociatedPress",
+        "Dasovich"
+      ],
+      "quotes": [
+        "It's wrong and irresponsible of the utilities to pocket this money and not pay the generators,"
+      ],
+      "worldview": "wv_ConsumerProtection"
+    },
+    "A16": {
+      "agent": "Dasovich",
+      "interprets": [
+        "re_Dasovich_PriceCapHarm"
+      ],
+      "ctx": [
+        "Dialogic",
+        "internal e-mail"
+      ],
+      "t": "2001-03-23T10:21:00Z",
+      "type": "exemplary",
+      "ori": "prospective",
+      "crit": "QF case",
+      "ev": "<3901232.1075843403288.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "This is yet another, tangible case of why price caps don't and can't help; they can and will only make matters worse."
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A17": {
+      "agent": "Dasovich",
+      "interprets": [
+        "re_Dasovich_RateMisalignment"
+      ],
+      "ctx": [
+        "Dialogic",
+        "internal e-mail on response to PG&E Ch. 11"
+      ],
+      "t": "2001-04-06T13:50:00Z",
+      "type": "critical",
+      "ori": "retrospective",
+      "crit": "cost-reflective pricing",
+      "ev": "<28714256.1075843416912.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "The other thing that Governor and his PUC could have done many months ago was realign rates to more accurately reflect the real cost of power. That arguably was a key determinant driving PG&E to Bankruptcy."
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A18": {
+      "agent": "Tribolet",
+      "interprets": [
+        "re_Tribolet_CreditorExposure"
+      ],
+      "ctx": [
+        "Institutional",
+        "synopsis of official creditors' committee call"
+      ],
+      "t": "2001-04-12T07:25:00Z",
+      "type": "traditional",
+      "ori": "prospective",
+      "crit": "creditor-committee deliberation",
+      "ev": "<22433150.1075847600814.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "The primary short-term issue facing us is whether we wish to throw our name in to be co-chair."
+      ],
+      "worldview": "wv_CreditorProtection"
+    },
+    "A19": {
+      "agent": "Tribolet",
+      "interprets": [
+        "re_Tribolet_CreditorExposure"
+      ],
+      "ctx": [
+        "Dialogic",
+        "internal e-mail reply on PG&E court action"
+      ],
+      "t": "2001-05-24T10:08:00Z",
+      "type": "genetic",
+      "ori": "prospective",
+      "crit": "regulatory accounting",
+      "ev": "<22014418.1075853221515.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "PG&E want to fight the TURN accounting as it, basically, wiped out hopes of collecting their undercollected amount from a regulatory accounting perspective."
+      ],
+      "worldview": "wv_CreditorProtection"
+    },
+    "A20": {
+      "agent": "Shapiro",
+      "interprets": [
+        "re_Shapiro_ISOPoliticization"
+      ],
+      "ctx": [
+        "Dialogic",
+        "internal e-mail"
+      ],
+      "t": "2001-02-05T08:47:00Z",
+      "type": "critical",
+      "ori": "prospective",
+      "crit": "FERC order on independent governance",
+      "ev": "<7997110.1075843348616.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "We need to force FERC's hand with a well-thought out pleading on why they have to enforce order on independent governance and why a politicized CAL ISO is a recipe for disaster."
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A22": {
+      "agent": "Angelides",
+      "interprets": [
+        "re_Angelides_SCEInsolvency"
+      ],
+      "ctx": [
+        "Dialogic",
+        "private meeting with an intelligence source"
+      ],
+      "t": "2001-05-22T00:00:00Z",
+      "tb": "inferred-from-text",
+      "type": "genetic",
+      "ori": "prospective",
+      "crit": "treasurer's knowledge of state finance",
+      "ev": "<30089639.1075843518185.JavaMail.evans@thyme>",
+      "voice": "quotedSpeech",
+      "via": [
+        "Walsh_source_unnamed",
+        "Walsh"
+      ],
+      "quotes": [
+        "he was surprised they hadn't already."
+      ],
+      "worldview": null
+    },
+    "A21": {
+      "agent": "Walsh",
+      "relational": [
+        "A12",
+        "A22"
+      ],
+      "interprets": [
+        "re_Walsh_BankruptcyGame"
+      ],
+      "ctx": [
+        "Institutional",
+        "internal intelligence briefing 'California Update'"
+      ],
+      "t": "2001-05-22T14:02:00Z",
+      "type": "genetic",
+      "ori": "retrospective",
+      "crit": "corroboration by a senior official",
+      "ev": "<30089639.1075843518185.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "quotes": [
+        "Corroborating our line over the past four months, Anglelides stated with confidence that SoCal would go bankrupt"
+      ],
+      "worldview": "wv_PoliticalRealism"
+    },
+    "A23": {
+      "agent": "Baum",
+      "interprets": [
+        "re_Baum_PriceGouging"
+      ],
+      "ctx": [
+        "Institutional",
+        "public statement reported by the Wall Street Journal"
+      ],
+      "t": "2000-08-10T05:15:00Z",
+      "type": "critical",
+      "ori": "presentist",
+      "crit": "out-of-state generators' prices",
+      "ev": "<19364023.1075846165444.JavaMail.evans@thyme>",
+      "voice": "quotedSpeech",
+      "via": [
+        "WallStreetJournal",
+        "DSGeorge_ALSTOM"
+      ],
+      "quotes": [
+        "electric market is broken"
+      ],
+      "worldview": "wv_RegulatedUtility"
+    },
+    "A24": {
+      "agent": "Shames",
+      "interprets": [
+        "re_Shames_SellerControl"
+      ],
+      "ctx": [
+        "Institutional",
+        "consumer advocate's statement to the press"
+      ],
+      "t": "2000-09-01T13:56:00Z",
+      "type": "critical",
+      "ori": "retrospective",
+      "crit": "customer bill impacts",
+      "ev": "<22945919.1075842959237.JavaMail.evans@thyme>",
+      "voice": "quotedSpeech",
+      "via": [
+        "SanDiegoUnionTribune",
+        "Dasovich"
+      ],
+      "quotes": [
+        "the almost irreparably broken California energy system.",
+        "It's a market controlled by the sellers of power and their cronies."
+      ],
+      "worldview": "wv_ConsumerProtection"
+    },
+    "A25": {
+      "agent": "Skilling",
+      "interprets": [
+        "re_Skilling_RegulatoryDesign"
+      ],
+      "ctx": [
+        "Institutional",
+        "public speech at the Commonwealth Club"
+      ],
+      "t": "2001-06-21T00:00:00Z",
+      "tb": "inferred-from-text",
+      "type": "critical",
+      "ori": "retrospective",
+      "crit": "history of PUC rules",
+      "ev": "<18570867.1075849283952.JavaMail.evans@thyme>",
+      "voice": "reportedSpeech",
+      "via": [
+        "AssociatedPress",
+        "Buster"
+      ],
+      "quotes": [
+        "The state Public Utilities Commission in the early 1990s put together a broken market by preventing utilities to pass along the full cost of power and discouraging power contracts that would have lowered dependence on buying last-minute power"
+      ],
+      "worldview": "wv_MarketLiberal"
+    },
+    "A26": {
+      "agent": "Dasovich",
+      "interprets": [
+        "re_SacBee_Manipulation",
+        "re_PGE_PriceGouging"
+      ],
+      "ctx": [
+        "Institutional",
+        "message points for a radio show"
+      ],
+      "t": "2001-05-30T12:06:00Z",
+      "type": "critical",
+      "ori": "presentist",
+      "crit": "absence of evidence after a year of investigation",
+      "ev": "<27911004.1075843541830.JavaMail.evans@thyme>",
+      "voice": "direct",
+      "denies": [
+        "qc_SellerMarketPower"
+      ],
+      "quotes": [
+        "Stop the blame; stop the political rhetoric. If there's evidence that manipulation has occured, produce it--the investigations have been going on for a year."
+      ],
+      "worldview": "wv_MarketLiberal"
+    }
+  },
+  "trajectories": {
+    "traj_Kean": [
+      "A01",
+      "A02",
+      "A03",
+      "A09"
+    ],
+    "traj_Walsh": [
+      "A11",
+      "A12",
+      "A21"
+    ],
+    "traj_Tribolet": [
+      "A18",
+      "A19"
+    ]
+  }
+}

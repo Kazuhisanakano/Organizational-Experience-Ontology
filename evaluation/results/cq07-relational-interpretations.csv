@@ -1,0 +1,4 @@
+rel,agent,relatedActs,n,statements
+act_A07,Kean,https://example.org/oe/enron/act_A06 https://example.org/oe/enron/act_A05,2,https://example.org/oe/enron/stmt_A07_1
+act_A14,Dasovich,https://example.org/oe/enron/act_A03 https://example.org/oe/enron/act_A13,2,https://example.org/oe/enron/stmt_A14_1
+act_A21,Walsh,https://example.org/oe/enron/act_A22 https://example.org/oe/enron/act_A12,2,https://example.org/oe/enron/stmt_A21_1

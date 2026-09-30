@@ -1,0 +1,13 @@
+# OEO -- query over the union of ontology and instance data; no OWL entailment required.
+# CQ7: Which RelationalInterpretations relate two or more InterpretationActs, who performed them,
+#      and which InterpretationStatements did they generate?
+# Evaluable WITHOUT OWL reasoning: the Scene of an event = the Scene of its focal part (property path
+#   oe:hasFocalPart/oe:occursIn); class membership via rdfs:subClassOf* (the TBox must be in the dataset).
+PREFIX oe: <https://example.org/oe#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?rel ?agent (GROUP_CONCAT(DISTINCT STR(?related); separator=" ") AS ?relatedActs) (COUNT(DISTINCT ?related) AS ?n)
+       (GROUP_CONCAT(DISTINCT STR(?stmt); separator=" ") AS ?statements) WHERE {
+  ?rel a/rdfs:subClassOf* oe:RelationalInterpretation ; prov:wasAssociatedWith ?agent ; oe:relatesInterpretations ?related .
+  OPTIONAL { ?stmt prov:wasGeneratedBy ?rel }
+} GROUP BY ?rel ?agent HAVING (COUNT(DISTINCT ?related) >= 2) ORDER BY ?rel

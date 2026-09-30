@@ -1,0 +1,21 @@
+{
+ "name": "enron",
+ "data_triples": 1439,
+ "closure_triples": 1806,
+ "reasoning": false,
+ "shacl_conforms": true,
+ "shacl_counts": {},
+ "cq_rows": {
+  "cq1.rq": 18,
+  "cq2.rq": 1,
+  "cq3.rq": 0,
+  "cq4.rq": 26,
+  "cq5.rq": 26,
+  "cq6.rq": 28,
+  "cq7.rq": 3,
+  "x1_contested_changes.rq": 1,
+  "x2_voice_mediation.rq": 16,
+  "x3_same_words_different_events.rq": 7,
+  "x4_granularity.rq": 3
+ }
+}

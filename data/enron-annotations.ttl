@@ -1,0 +1,1615 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix enr: <https://example.org/oe/enron/> .
+@prefix oe: <https://example.org/oe#> .
+@prefix oex: <https://example.org/oe/ext#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+enr:stmt_A01_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Kean ;
+    prov:wasDerivedFrom enr:email_14290787_1075846166614 ;
+    prov:wasGeneratedBy enr:act_A01 ;
+    oe:literalForm "there has not been enough deregulation; the government is still very much in the way."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A03_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Kean ;
+    prov:wasDerivedFrom enr:email_31087568_1075846174117 ;
+    prov:wasGeneratedBy enr:act_A03 ;
+    prov:wasRevisionOf enr:stmt_A02_1 ;
+    oe:literalForm "the problem is fairly straightforward (demand increases and new supplies are inhibited so prices go up and shortages ensue ... sound familiar?)"@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A04_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:EnronPublicPolicy ;
+    prov:wasDerivedFrom enr:email_716812_1075846166852 ;
+    prov:wasGeneratedBy enr:act_A04 ;
+    oe:literalForm "the market is working, regulation is not."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A04_2 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:EnronPublicPolicy ;
+    prov:wasDerivedFrom enr:email_716812_1075846166852 ;
+    prov:wasGeneratedBy enr:act_A04 ;
+    oe:literalForm "The problem is regulation, not deregulation."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A05_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:SacBee ;
+    prov:wasDerivedFrom enr:email_8415828_1075842977222 ;
+    prov:wasGeneratedBy enr:act_A05 ;
+    prov:wasQuotedFrom enr:news_A05 ;
+    oe:literalForm "This is a telltale sign that California's electricity market is working for those who own power plants, not those who pay the bills that are poised to rise."@en ;
+    oex:mediatedBy enr:Dasovich ;
+    oex:voiceMode oex:quotedSpeech .
+
+enr:stmt_A06_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:FERC ;
+    prov:wasDerivedFrom enr:email_3209089_1075856267861 ;
+    prov:wasGeneratedBy enr:act_A06 ;
+    prov:wasQuotedFrom enr:news_A06 ;
+    oe:literalForm "California ratepayers were subjected to unjust and unreasonable power rates due to California's \"seriously flawed\" market structure and rules in conjunction with tight demand and supply conditions throughout the West."@en ;
+    oex:mediatedBy enr:EEI_AllianceInfoAlert ;
+    oex:voiceMode oex:reportedSpeech .
+
+enr:stmt_A07_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Kean ;
+    prov:wasDerivedFrom enr:email_13411164_1075846188375 ;
+    prov:wasGeneratedBy enr:act_A07 ;
+    oe:literalForm "instead of blaming generators and marketers the report blames the structure of the market for California's woes."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A08_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Denne ;
+    prov:wasDerivedFrom enr:email_29378922_1075843052237 ;
+    prov:wasGeneratedBy enr:act_A08 ;
+    oe:literalForm "This is a publicity stunt. Three separate federal and state regulatory agencies have investigated the allegations rehashed in this lawsuit and found that no market power was exercised in California."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A09_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Kean ;
+    prov:wasDerivedFrom enr:email_14658458_1075843072589 ;
+    prov:wasGeneratedBy enr:act_A09 ;
+    oe:literalForm "Unless we have strong evidence to the contrary, it seems to me that wholesale markets are working .... they are open and they are competitive."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A10_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:PGE ;
+    prov:wasDerivedFrom enr:email_10005754_1075844135318 ;
+    prov:wasGeneratedBy enr:act_A10 ;
+    prov:wasQuotedFrom enr:news_A10 ;
+    oe:literalForm "The California wholesale market is broken. And we are extremely disappointed by the insufficiency of today's FERC order,"@en ;
+    oex:mediatedBy enr:Fawcett,
+        enr:NewsOutlet_unnamed ;
+    oex:voiceMode oex:quotedSpeech .
+
+enr:stmt_A12_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Walsh ;
+    prov:wasDerivedFrom enr:email_17720581_1075840903917 ;
+    prov:wasGeneratedBy enr:act_A12 ;
+    prov:wasRevisionOf enr:stmt_A11_1 ;
+    oe:literalForm "back at the poker table in Sacramento the situation continues to drift toward bankruptcy."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A13_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Abraham ;
+    prov:wasDerivedFrom enr:email_29321285_1075843394361 ;
+    prov:wasGeneratedBy enr:act_A13 ;
+    prov:wasQuotedFrom enr:news_A13 ;
+    oe:literalForm "Any action we take must either help increase supply or reduce demand. . . . Price caps will not increase supply or reduce demand."@en ;
+    oex:mediatedBy enr:Dasovich,
+        enr:SF_Chronicle ;
+    oex:voiceMode oex:quotedSpeech .
+
+enr:stmt_A14_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Dasovich ;
+    prov:wasDerivedFrom enr:email_29321285_1075843394361 ;
+    prov:wasGeneratedBy enr:act_A14 ;
+    oe:literalForm "Note Abraham's quote in p.#3 re: \"must increase supply or decrease demand.\" I've heard that somewhere before."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A15_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Davis ;
+    prov:wasDerivedFrom enr:email_8069579_1075843400180 ;
+    prov:wasGeneratedBy enr:act_A15 ;
+    prov:wasQuotedFrom enr:news_A15 ;
+    oe:literalForm "It's wrong and irresponsible of the utilities to pocket this money and not pay the generators,"@en ;
+    oex:mediatedBy enr:AssociatedPress,
+        enr:Dasovich ;
+    oex:voiceMode oex:quotedSpeech .
+
+enr:stmt_A16_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Dasovich ;
+    prov:wasDerivedFrom enr:email_3901232_1075843403288 ;
+    prov:wasGeneratedBy enr:act_A16 ;
+    oe:literalForm "This is yet another, tangible case of why price caps don't and can't help; they can and will only make matters worse."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A17_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Dasovich ;
+    prov:wasDerivedFrom enr:email_28714256_1075843416912 ;
+    prov:wasGeneratedBy enr:act_A17 ;
+    oe:literalForm "The other thing that Governor and his PUC could have done many months ago was realign rates to more accurately reflect the real cost of power. That arguably was a key determinant driving PG&E to Bankruptcy."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A18_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Tribolet ;
+    prov:wasDerivedFrom enr:email_22433150_1075847600814 ;
+    prov:wasGeneratedBy enr:act_A18 ;
+    oe:literalForm "The primary short-term issue facing us is whether we wish to throw our name in to be co-chair."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A19_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Tribolet ;
+    prov:wasDerivedFrom enr:email_22014418_1075853221515 ;
+    prov:wasGeneratedBy enr:act_A19 ;
+    oe:literalForm "PG&E want to fight the TURN accounting as it, basically, wiped out hopes of collecting their undercollected amount from a regulatory accounting perspective."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A20_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Shapiro ;
+    prov:wasDerivedFrom enr:email_7997110_1075843348616 ;
+    prov:wasGeneratedBy enr:act_A20 ;
+    oe:literalForm "We need to force FERC's hand with a well-thought out pleading on why they have to enforce order on independent governance and why a politicized CAL ISO is a recipe for disaster."@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A21_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Walsh ;
+    prov:wasDerivedFrom enr:email_30089639_1075843518185 ;
+    prov:wasGeneratedBy enr:act_A21 ;
+    oe:literalForm "Corroborating our line over the past four months, Anglelides stated with confidence that SoCal would go bankrupt"@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A22_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Angelides ;
+    prov:wasDerivedFrom enr:email_30089639_1075843518185 ;
+    prov:wasGeneratedBy enr:act_A22 ;
+    prov:wasQuotedFrom enr:news_A22 ;
+    oe:literalForm "he was surprised they hadn't already."@en ;
+    oex:mediatedBy enr:Walsh,
+        enr:Walsh_source_unnamed ;
+    oex:voiceMode oex:quotedSpeech .
+
+enr:stmt_A23_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Baum ;
+    prov:wasDerivedFrom enr:email_19364023_1075846165444 ;
+    prov:wasGeneratedBy enr:act_A23 ;
+    prov:wasQuotedFrom enr:news_A23 ;
+    oe:literalForm "electric market is broken"@en ;
+    oex:mediatedBy enr:DSGeorge_ALSTOM,
+        enr:WallStreetJournal ;
+    oex:voiceMode oex:quotedSpeech .
+
+enr:stmt_A24_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Shames ;
+    prov:wasDerivedFrom enr:email_22945919_1075842959237 ;
+    prov:wasGeneratedBy enr:act_A24 ;
+    prov:wasQuotedFrom enr:news_A24 ;
+    oe:literalForm "the almost irreparably broken California energy system."@en ;
+    oex:mediatedBy enr:Dasovich,
+        enr:SanDiegoUnionTribune ;
+    oex:voiceMode oex:quotedSpeech .
+
+enr:stmt_A24_2 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Shames ;
+    prov:wasDerivedFrom enr:email_22945919_1075842959237 ;
+    prov:wasGeneratedBy enr:act_A24 ;
+    prov:wasQuotedFrom enr:news_A24 ;
+    oe:literalForm "It's a market controlled by the sellers of power and their cronies."@en ;
+    oex:mediatedBy enr:Dasovich,
+        enr:SanDiegoUnionTribune ;
+    oex:voiceMode oex:quotedSpeech .
+
+enr:stmt_A25_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Skilling ;
+    prov:wasDerivedFrom enr:email_18570867_1075849283952 ;
+    prov:wasGeneratedBy enr:act_A25 ;
+    prov:wasQuotedFrom enr:news_A25 ;
+    oe:literalForm "The state Public Utilities Commission in the early 1990s put together a broken market by preventing utilities to pass along the full cost of power and discouraging power contracts that would have lowered dependence on buying last-minute power"@en ;
+    oex:mediatedBy enr:AssociatedPress,
+        enr:Buster ;
+    oex:voiceMode oex:reportedSpeech .
+
+enr:stmt_A26_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Dasovich ;
+    prov:wasDerivedFrom enr:email_27911004_1075843541830 ;
+    prov:wasGeneratedBy enr:act_A26 ;
+    oe:literalForm "Stop the blame; stop the political rhetoric. If there's evidence that manipulation has occured, produce it--the investigations have been going on for a year."@en ;
+    oex:voiceMode oex:direct .
+
+enr:traj_Kean a oe:InterpretiveTrajectory ;
+    oe:hasStage enr:act_A01,
+        enr:act_A02,
+        enr:act_A03,
+        enr:act_A09 .
+
+enr:traj_Tribolet a oe:InterpretiveTrajectory ;
+    oe:hasStage enr:act_A18,
+        enr:act_A19 .
+
+enr:traj_Walsh a oe:InterpretiveTrajectory ;
+    oe:hasStage enr:act_A11,
+        enr:act_A12,
+        enr:act_A21 .
+
+oe:TraditionalInterpretation a oe:InterpretationType .
+
+enr:BlameCampaign a oe:EventType ;
+    skos:prefLabel "BlameCampaign" .
+
+enr:Buster a prov:Agent .
+
+enr:CA_GenerationFleet a oe:ChangingObject .
+
+enr:CA_Grid a oe:ChangingObject .
+
+enr:CA_IOUs a oe:ChangingObject .
+
+enr:CA_ISO a oe:ChangingObject .
+
+enr:CA_MarketRules a oe:ChangingObject .
+
+enr:CA_PowerSupply a oe:ChangingObject .
+
+enr:CounterpartyCreditEvent a oe:EventType ;
+    skos:prefLabel "CounterpartyCreditEvent" .
+
+enr:CounterproductiveIntervention a oe:EventType ;
+    skos:prefLabel "CounterproductiveIntervention" .
+
+enr:DSGeorge_ALSTOM a prov:Agent .
+
+enr:Davis_SCE_MOU a oe:ChangingObject .
+
+enr:EEI_AllianceInfoAlert a prov:Agent .
+
+enr:Fawcett a prov:Agent .
+
+enr:GovernanceFailure a oe:EventType ;
+    skos:prefLabel "GovernanceFailure" .
+
+enr:IOU_RetailTariff a oe:ChangingObject .
+
+enr:InsolvencyOutlook a oe:EventType ;
+    skos:prefLabel "InsolvencyOutlook" .
+
+enr:MarketDesignFlaw a oe:EventType ;
+    skos:prefLabel "MarketDesignFlaw" .
+
+enr:NewsOutlet_unnamed a prov:Agent .
+
+enr:PoliticalBargaining a oe:EventType ;
+    skos:prefLabel "PoliticalBargaining" .
+
+enr:RegulatoryObstructionOfSupply a oe:EventType ;
+    skos:prefLabel "RegulatoryObstructionOfSupply" .
+
+enr:SF_Chronicle a prov:Agent .
+
+enr:StateOfCalifornia_DWR a oe:ChangingObject .
+
+enr:SupplyEmergency a oe:EventType ;
+    skos:prefLabel "SupplyEmergency" .
+
+enr:UtilityMisconduct a oe:EventType ;
+    skos:prefLabel "UtilityMisconduct" .
+
+enr:WallStreetJournal a prov:Agent .
+
+enr:Walsh_source_unnamed a prov:Agent .
+
+enr:act_A07 a oe:RelationalInterpretation ;
+    prov:startedAtTime "2000-11-01T17:15:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_13411164_1075846188375 ;
+    prov:wasAssociatedWith enr:Kean ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A07 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Presentist ;
+    oe:interprets enr:re_FERC_FlawedMarket,
+        enr:re_SacBee_Manipulation ;
+    oe:producedIn enr:ctx_A07 ;
+    oe:relatesInterpretations enr:act_A05,
+        enr:act_A06 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A08 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-11-29T18:00:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_29378922_1075843052237 ;
+    prov:wasAssociatedWith enr:Denne ;
+    oe:basedOn enr:wv_ReputationManagement ;
+    oe:hasInterpretationCriterion enr:crit_A08 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Retrospective ;
+    oe:interprets enr:re_Denne_BlameCampaign ;
+    oe:producedIn enr:ctx_A08 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:deniesChange enr:qc_SellerMarketPower ;
+    oex:timeBasis "message-date" .
+
+enr:act_A10 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-12-15T00:00:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_10005754_1075844135318 ;
+    prov:wasAssociatedWith enr:PGE ;
+    oe:basedOn enr:wv_RegulatedUtility ;
+    oe:hasInterpretationCriterion enr:crit_A10 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_PGE_PriceGouging ;
+    oe:producedIn enr:ctx_A10 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "inferred-from-text" .
+
+enr:act_A14 a oe:RelationalInterpretation ;
+    prov:startedAtTime "2001-03-16T12:09:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_29321285_1075843394361 ;
+    prov:wasAssociatedWith enr:Dasovich ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A14 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Presentist ;
+    oe:interprets enr:re_Abraham_SupplyEmergency ;
+    oe:producedIn enr:ctx_A14 ;
+    oe:relatesInterpretations enr:act_A03,
+        enr:act_A13 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "'I've heard that somewhere before' implicitly relates Abraham's line to Enron's own earlier line (A03); the referent is an annotator judgment."@en ;
+    oex:timeBasis "message-date" .
+
+enr:act_A15 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-03-21T10:32:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_8069579_1075843400180 ;
+    prov:wasAssociatedWith enr:Davis ;
+    oe:basedOn enr:wv_ConsumerProtection ;
+    oe:hasInterpretationCriterion enr:crit_A15 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Retrospective ;
+    oe:interprets enr:re_Davis_UtilityMisconduct ;
+    oe:producedIn enr:ctx_A15 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A16 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-03-23T10:21:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_3901232_1075843403288 ;
+    prov:wasAssociatedWith enr:Dasovich ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A16 ;
+    oe:hasInterpretationType oe:ExemplaryInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_Dasovich_PriceCapHarm ;
+    oe:producedIn enr:ctx_A16 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A17 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-04-06T13:50:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_28714256_1075843416912 ;
+    prov:wasAssociatedWith enr:Dasovich ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A17 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Retrospective ;
+    oe:interprets enr:re_Dasovich_RateMisalignment ;
+    oe:producedIn enr:ctx_A17 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A20 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-02-05T08:47:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_7997110_1075843348616 ;
+    prov:wasAssociatedWith enr:Shapiro ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A20 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_Shapiro_ISOPoliticization ;
+    oe:producedIn enr:ctx_A20 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A23 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-08-10T05:15:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_19364023_1075846165444 ;
+    prov:wasAssociatedWith enr:Baum ;
+    oe:basedOn enr:wv_RegulatedUtility ;
+    oe:hasInterpretationCriterion enr:crit_A23 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Presentist ;
+    oe:interprets enr:re_Baum_PriceGouging ;
+    oe:producedIn enr:ctx_A23 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A25 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-06-21T00:00:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_18570867_1075849283952 ;
+    prov:wasAssociatedWith enr:Skilling ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A25 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Retrospective ;
+    oe:interprets enr:re_Skilling_RegulatoryDesign ;
+    oe:producedIn enr:ctx_A25 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "inferred-from-text" .
+
+enr:act_A26 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-05-30T12:06:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_27911004_1075843541830 ;
+    prov:wasAssociatedWith enr:Dasovich ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A26 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Presentist ;
+    oe:interprets enr:re_PGE_PriceGouging,
+        enr:re_SacBee_Manipulation ;
+    oe:producedIn enr:ctx_A26 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:deniesChange enr:qc_SellerMarketPower ;
+    oex:timeBasis "message-date" .
+
+enr:congestionManagementReformStatus a oe:ChangingQuality .
+
+enr:costRecoveryGap a oe:ChangingQuality .
+
+enr:creditworthiness a oe:ChangingQuality .
+
+enr:crit_A01 a oe:InterpretationCriterion ;
+    skos:prefLabel "MW proposed but not sited"@en .
+
+enr:crit_A02 a oe:InterpretationCriterion ;
+    skos:prefLabel "price data on gasoline, electricity, natural gas"@en .
+
+enr:crit_A03 a oe:InterpretationCriterion ;
+    skos:prefLabel "supply-demand reasoning"@en .
+
+enr:crit_A04 a oe:InterpretationCriterion ;
+    skos:prefLabel "demand growth vs capacity growth statistics"@en .
+
+enr:crit_A05 a oe:InterpretationCriterion ;
+    skos:prefLabel "PX price data (Aug 1999 vs Aug 2000)"@en .
+
+enr:crit_A06 a oe:InterpretationCriterion ;
+    skos:prefLabel "staff investigation of summer 2000 markets"@en .
+
+enr:crit_A07 a oe:InterpretationCriterion ;
+    skos:prefLabel "FERC staff report"@en .
+
+enr:crit_A08 a oe:InterpretationCriterion ;
+    skos:prefLabel "prior regulatory investigations"@en .
+
+enr:crit_A09 a oe:InterpretationCriterion ;
+    skos:prefLabel "openness and competitiveness of wholesale markets"@en .
+
+enr:crit_A10 a oe:InterpretationCriterion ;
+    skos:prefLabel "assessment of FERC order remedies"@en .
+
+enr:crit_A11 a oe:InterpretationCriterion ;
+    skos:prefLabel "source intelligence"@en .
+
+enr:crit_A12 a oe:InterpretationCriterion ;
+    skos:prefLabel "reading of Davis's political situation"@en .
+
+enr:crit_A13 a oe:InterpretationCriterion ;
+    skos:prefLabel "supply-demand principle"@en .
+
+enr:crit_A14 a oe:InterpretationCriterion ;
+    skos:prefLabel "recognition of own prior message"@en .
+
+enr:crit_A15 a oe:InterpretationCriterion ;
+    skos:prefLabel "unpaid QF bills"@en .
+
+enr:crit_A16 a oe:InterpretationCriterion ;
+    skos:prefLabel "QF case"@en .
+
+enr:crit_A17 a oe:InterpretationCriterion ;
+    skos:prefLabel "cost-reflective pricing"@en .
+
+enr:crit_A18 a oe:InterpretationCriterion ;
+    skos:prefLabel "creditor-committee deliberation"@en .
+
+enr:crit_A19 a oe:InterpretationCriterion ;
+    skos:prefLabel "regulatory accounting"@en .
+
+enr:crit_A20 a oe:InterpretationCriterion ;
+    skos:prefLabel "FERC order on independent governance"@en .
+
+enr:crit_A21 a oe:InterpretationCriterion ;
+    skos:prefLabel "corroboration by a senior official"@en .
+
+enr:crit_A22 a oe:InterpretationCriterion ;
+    skos:prefLabel "treasurer's knowledge of state finance"@en .
+
+enr:crit_A23 a oe:InterpretationCriterion ;
+    skos:prefLabel "out-of-state generators' prices"@en .
+
+enr:crit_A24 a oe:InterpretationCriterion ;
+    skos:prefLabel "customer bill impacts"@en .
+
+enr:crit_A25 a oe:InterpretationCriterion ;
+    skos:prefLabel "history of PUC rules"@en .
+
+enr:crit_A26 a oe:InterpretationCriterion ;
+    skos:prefLabel "absence of evidence after a year of investigation"@en .
+
+enr:ctx_A01 a oe:DialogicContext ;
+    rdfs:label "internal e-mail to government-affairs team"@en ;
+    prov:startedAtTime "2000-08-14T10:42:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A02 a oe:DialogicContext ;
+    rdfs:label "e-mail preparing an advisory-council discussion"@en ;
+    prov:startedAtTime "2000-08-29T11:38:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A03 a oe:DialogicContext ;
+    rdfs:label "e-mail summarizing own legislative testimony"@en ;
+    prov:startedAtTime "2000-09-13T09:44:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A04 a oe:InstitutionalContext ;
+    rdfs:label "executive-committee talking points"@en ;
+    prov:startedAtTime "2000-08-14T17:42:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A05 a oe:InstitutionalContext ;
+    rdfs:label "published newspaper editorial"@en ;
+    prov:startedAtTime "2000-09-22T13:40:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A06 a oe:InstitutionalContext ;
+    rdfs:label "FERC staff report and proposed order"@en ;
+    prov:startedAtTime "2000-11-01T17:13:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A07 a oe:DialogicContext ;
+    rdfs:label "e-mail commenting on an article draft"@en ;
+    prov:startedAtTime "2000-11-01T17:15:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A08 a oe:InstitutionalContext ;
+    rdfs:label "official press statement on San Diego lawsuit"@en ;
+    prov:startedAtTime "2000-11-29T18:00:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A09 a oe:DialogicContext ;
+    rdfs:label "internal e-mail on gas-market talking points"@en ;
+    prov:startedAtTime "2000-12-12T15:07:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A10 a oe:InstitutionalContext ;
+    rdfs:label "company statement on FERC order of 15 Dec 2000"@en ;
+    prov:startedAtTime "2000-12-15T00:00:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A11 a oe:InstitutionalContext ;
+    rdfs:label "internal intelligence briefing 'California Update'"@en ;
+    prov:startedAtTime "2001-01-31T11:48:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A12 a oe:InstitutionalContext ;
+    rdfs:label "internal intelligence briefing 'California Update #2'"@en ;
+    prov:startedAtTime "2001-02-23T22:22:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A13 a oe:InstitutionalContext ;
+    rdfs:label "U.S. Senate committee testimony"@en ;
+    prov:startedAtTime "2001-03-15T00:00:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A14 a oe:DialogicContext ;
+    rdfs:label "internal e-mail forwarding a news story"@en ;
+    prov:startedAtTime "2001-03-16T12:09:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A15 a oe:InstitutionalContext ;
+    rdfs:label "governor's public statement"@en ;
+    prov:startedAtTime "2001-03-21T10:32:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A16 a oe:DialogicContext ;
+    rdfs:label "internal e-mail"@en ;
+    prov:startedAtTime "2001-03-23T10:21:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A17 a oe:DialogicContext ;
+    rdfs:label "internal e-mail on response to PG&E Ch. 11"@en ;
+    prov:startedAtTime "2001-04-06T13:50:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A18 a oe:InstitutionalContext ;
+    rdfs:label "synopsis of official creditors' committee call"@en ;
+    prov:startedAtTime "2001-04-12T07:25:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A19 a oe:DialogicContext ;
+    rdfs:label "internal e-mail reply on PG&E court action"@en ;
+    prov:startedAtTime "2001-05-24T10:08:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A20 a oe:DialogicContext ;
+    rdfs:label "internal e-mail"@en ;
+    prov:startedAtTime "2001-02-05T08:47:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A21 a oe:InstitutionalContext ;
+    rdfs:label "internal intelligence briefing 'California Update'"@en ;
+    prov:startedAtTime "2001-05-22T14:02:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A22 a oe:DialogicContext ;
+    rdfs:label "private meeting with an intelligence source"@en ;
+    prov:startedAtTime "2001-05-22T00:00:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A23 a oe:InstitutionalContext ;
+    rdfs:label "public statement reported by the Wall Street Journal"@en ;
+    prov:startedAtTime "2000-08-10T05:15:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A24 a oe:InstitutionalContext ;
+    rdfs:label "consumer advocate's statement to the press"@en ;
+    prov:startedAtTime "2000-09-01T13:56:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A25 a oe:InstitutionalContext ;
+    rdfs:label "public speech at the Commonwealth Club"@en ;
+    prov:startedAtTime "2001-06-21T00:00:00+00:00"^^xsd:dateTime .
+
+enr:ctx_A26 a oe:InstitutionalContext ;
+    rdfs:label "message points for a radio show"@en ;
+    prov:startedAtTime "2001-05-30T12:06:00+00:00"^^xsd:dateTime .
+
+enr:extent_CA_2000_2001 a oe:SpatiotemporalExtent ;
+    rdfs:label "California (Wikidata Q99), 2000-08-01/2001-06-30"@en ;
+    dcterms:spatial <http://www.wikidata.org/entity/Q99> ;
+    dcterms:temporal "2000-08-01/2001-06-30" .
+
+enr:governanceIndependence a oe:ChangingQuality .
+
+enr:legalPoliticalExposure a oe:ChangingQuality .
+
+enr:legalStatus a oe:ChangingQuality .
+
+enr:markupOverCompetitivePrice a oe:ChangingQuality .
+
+enr:newCapacityAdditions a oe:ChangingQuality .
+
+enr:news_A05 a oex:NewsItem ;
+    oex:attestedIn enr:email_8415828_1075842977222 .
+
+enr:news_A06 a oex:NewsItem ;
+    oex:attestedIn enr:email_3209089_1075856267861 .
+
+enr:news_A10 a oex:NewsItem ;
+    oex:attestedIn enr:email_10005754_1075844135318 .
+
+enr:news_A13 a oex:NewsItem ;
+    oex:attestedIn enr:email_29321285_1075843394361 .
+
+enr:news_A15 a oex:NewsItem ;
+    oex:attestedIn enr:email_8069579_1075843400180 .
+
+enr:news_A22 a oex:NewsItem ;
+    oex:attestedIn enr:email_30089639_1075843518185 .
+
+enr:news_A23 a oex:NewsItem ;
+    oex:attestedIn enr:email_19364023_1075846165444 .
+
+enr:news_A25 a oex:NewsItem ;
+    oex:attestedIn enr:email_18570867_1075849283952 .
+
+enr:priceCapStringency a oe:ChangingQuality .
+
+enr:procurementRole a oe:ChangingQuality .
+
+enr:qc_Blackouts a oe:DirectQC ;
+    rdfs:label "rolling blackouts"@en ;
+    oe:hasChangingObject enr:CA_Grid ;
+    oe:hasChangingQuality enr:serviceContinuity ;
+    oe:occursIn enr:sceneCA .
+
+enr:qc_ISOCongestionReformHalted a oe:DirectQC ;
+    rdfs:label "Cal ISO announces (30 Jan 2001) it will not file the FERC-ordered congestion-management proposal"@en ;
+    oe:hasChangingObject enr:CA_ISO ;
+    oe:hasChangingQuality enr:congestionManagementReformStatus ;
+    oe:occursIn enr:sceneCA .
+
+enr:qc_ISOGovernancePoliticization a oe:IndirectQC ;
+    rdfs:label "ISO governance becomes politically controlled"@en ;
+    oe:hasChangingObject enr:CA_WholesaleMarket ;
+    oe:hasChangingQuality enr:governanceIndependence ;
+    oe:occursIn enr:sceneCA ;
+    oex:qualityBearer enr:CA_ISO_Board .
+
+enr:qc_ManipulationAllegations a oe:DirectQC ;
+    rdfs:label "lawsuits/investigations accuse sellers"@en ;
+    oe:hasChangingObject enr:GeneratorsAndMarketers ;
+    oe:hasChangingQuality enr:legalPoliticalExposure ;
+    oe:occursIn enr:sceneCA .
+
+enr:qc_SCERescueCollapse a oe:DirectQC ;
+    rdfs:label "the Davis/SoCal Edison rescue MOU collapses"@en ;
+    oe:hasChangingObject enr:Davis_SCE_MOU ;
+    oe:hasChangingQuality enr:viability ;
+    oe:occursIn enr:sceneCA .
+
+enr:qc_StateAsBuyer a oe:DirectQC ;
+    rdfs:label "the State (DWR) becomes the power buyer, funded by bonds"@en ;
+    oe:hasChangingObject enr:StateOfCalifornia_DWR ;
+    oe:hasChangingQuality enr:procurementRole ;
+    oe:occursIn enr:sceneCA .
+
+enr:re_Angelides_SCEInsolvency a oe:IndividualRE ;
+    prov:startedAtTime "2001-05-22T00:00:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:InsolvencyOutlook ;
+    oe:hasCoreContext enr:qc_SCERescueCollapse ;
+    oe:hasFocalPart enr:qc_UtilityInsolvency ;
+    oe:individuatedBy enr:Angelides ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Doubly mediated (Walsh's source): SoCal 'would go bankrupt'. No core context attested. v2: core context from the same report: 'He added that the Davis/SoCal MOU is dead'."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Baum_PriceGouging a oe:IndividualRE ;
+    prov:startedAtTime "2000-08-10T05:15:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:PriceGouging ;
+    oe:hasCoreContext enr:qc_SellerMarketPower ;
+    oe:hasFocalPart enr:qc_WholesalePriceRise ;
+    oe:individuatedBy enr:Baum ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "out-of-state generators 'gouging' California residents."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Dasovich_PriceCapHarm a oe:IndividualRE ;
+    prov:startedAtTime "2001-03-23T10:21:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:CounterproductiveIntervention ;
+    oe:hasCoreContext enr:qc_SupplyShortfall ;
+    oe:hasFocalPart enr:qc_PriceCapRegime ;
+    oe:individuatedBy enr:Dasovich ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Caps on QFs (focal) -> shut downs, 'reduce supply and decrease reliability' (core)."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Dasovich_RateMisalignment a oe:IndividualRE ;
+    prov:startedAtTime "2001-04-06T13:50:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:RegulatoryFailure ;
+    oe:hasCoreContext enr:qc_RetailRateFreeze ;
+    oe:hasFocalPart enr:qc_PGEBankruptcy ;
+    oe:individuatedBy enr:Dasovich ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Same event core as Tribolet, different EventType: failure to realign rates 'a key determinant driving PG&E to Bankruptcy'."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Davis_UtilityMisconduct a oe:IndividualRE ;
+    prov:startedAtTime "2001-03-21T10:32:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:UtilityMisconduct ;
+    oe:hasCoreContext enr:qc_UtilityInsolvency ;
+    oe:hasFocalPart enr:qc_Blackouts ;
+    oe:individuatedBy enr:Davis ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Utilities 'partly to blame for this week's widespread blackouts because they failed to pay' QFs."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Denne_BlameCampaign a oe:IndividualRE ;
+    prov:startedAtTime "2000-11-29T18:00:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:BlameCampaign ;
+    oe:hasCoreContext enr:qc_WholesalePriceRise ;
+    oe:hasFocalPart enr:qc_ManipulationAllegations ;
+    oe:individuatedBy enr:Denne ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "The San Diego lawsuit (allegation) is the focal part; the unsolved price problem is the background ('fix blame rather than fix the problem')."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_EnronPP_RegulationFailure a oe:CollectiveRE ;
+    prov:startedAtTime "2000-08-14T17:42:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:RegulatoryFailure ;
+    oe:hasCoreContext enr:qc_SitingBlocked ;
+    oe:hasFocalPart enr:qc_SupplyShortfall ;
+    oe:individuatedBy enr:EnronPublicPolicy ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Talking points: demand +10% vs capacity +2%; 'The problem is regulation, not deregulation.'"@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Shames_SellerControl a oe:IndividualRE ;
+    prov:startedAtTime "2000-09-01T13:56:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:SellerManipulation ;
+    oe:hasCoreContext enr:qc_SellerMarketPower ;
+    oe:hasFocalPart enr:qc_WholesalePriceRise ;
+    oe:individuatedBy enr:Shames ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "customers subjected to market prices in 'a market controlled by the sellers of power and their cronies'."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Shapiro_ISOPoliticization a oe:IndividualRE ;
+    prov:startedAtTime "2001-02-05T08:47:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:GovernanceFailure ;
+    oe:hasCoreContext enr:qc_ISOCongestionReformHalted ;
+    oe:hasFocalPart enr:qc_ISOGovernancePoliticization ;
+    oe:individuatedBy enr:Shapiro ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "'a politicized CAL ISO is a recipe for disaster'; evidence does not name a core context (S4w expected). v2: core context taken from the message Shapiro replies to (Steffes 1 Feb 2001: 'Cal ISO has filed ... that it will not be filing a new Congestion Management proposal')."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Skilling_RegulatoryDesign a oe:IndividualRE ;
+    prov:startedAtTime "2001-06-21T00:00:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:RegulatoryFailure ;
+    oe:hasCoreContext enr:qc_RetailRateFreeze ;
+    oe:hasFocalPart enr:qc_SpotMarketShift ;
+    oe:individuatedBy enr:Skilling ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "consumers 'thrown totally to the mercy of the spot market' (focal) because utilities were prevented from passing on costs (core)."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:reserveMargin a oe:ChangingQuality .
+
+enr:role_Abraham a oe:OrganizationalRole ;
+    skos:prefLabel "U.S. Secretary of Energy"@en .
+
+enr:role_Angelides a oe:OrganizationalRole ;
+    skos:prefLabel "California State Treasurer"@en .
+
+enr:role_Baum a oe:OrganizationalRole ;
+    skos:prefLabel "President and CEO, Sempra Energy"@en .
+
+enr:role_Dasovich a oe:OrganizationalRole ;
+    skos:prefLabel "Government Affairs (California), Enron"@en .
+
+enr:role_Davis a oe:OrganizationalRole ;
+    skos:prefLabel "Governor of California"@en .
+
+enr:role_Denne a oe:OrganizationalRole ;
+    skos:prefLabel "Public relations, Enron"@en .
+
+enr:role_EnronPublicPolicy a oe:OrganizationalRole ;
+    skos:prefLabel "corporate public-policy function"@en .
+
+enr:role_FERC a oe:OrganizationalRole ;
+    skos:prefLabel "federal regulator"@en .
+
+enr:role_Kean a oe:OrganizationalRole ;
+    skos:prefLabel "EVP and Chief of Staff, Enron"@en .
+
+enr:role_PGE a oe:OrganizationalRole ;
+    skos:prefLabel "investor-owned utility"@en .
+
+enr:role_SacBee a oe:OrganizationalRole ;
+    skos:prefLabel "newspaper editorial board"@en .
+
+enr:role_Shames a oe:OrganizationalRole ;
+    skos:prefLabel "Utility Consumers' Action Network (consumer advocate)"@en .
+
+enr:role_Shapiro a oe:OrganizationalRole ;
+    skos:prefLabel "VP Government Affairs, Enron"@en .
+
+enr:role_Skilling a oe:OrganizationalRole ;
+    skos:prefLabel "President and CEO, Enron"@en .
+
+enr:role_Tribolet a oe:OrganizationalRole ;
+    skos:prefLabel "Enron representative on utility creditor matters (inferred)"@en .
+
+enr:role_Walsh a oe:OrganizationalRole ;
+    skos:prefLabel "Author of internal 'California Update' intelligence reports (inferred)"@en .
+
+enr:serviceContinuity a oe:ChangingQuality .
+
+enr:shareOfSpotPurchases a oe:ChangingQuality .
+
+enr:stmt_A02_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Kean ;
+    prov:wasDerivedFrom enr:email_13685960_1075846171560 ;
+    prov:wasGeneratedBy enr:act_A02 ;
+    oe:literalForm "While it's premature to say we have an energy crisis, we are witnessing the triple threat of high summer gasoline prices, spiking electricity prices, and high natural gas prices"@en ;
+    oex:voiceMode oex:direct .
+
+enr:stmt_A11_1 a oe:InterpretationStatement ;
+    prov:wasAttributedTo enr:Walsh ;
+    prov:wasDerivedFrom enr:email_13095701_1075856223012 ;
+    prov:wasGeneratedBy enr:act_A11 ;
+    oe:literalForm "The threat of bankruptcy is significantly diminishing as Davis hatches a plan to 1) pass on \"court ordered rate increases\" and 2) issue revenue bonds."@en ;
+    oex:voiceMode oex:direct .
+
+enr:viability a oe:ChangingQuality .
+
+enr:wholesalePriceLevel a oe:ChangingQuality .
+
+enr:wv_RegulatoryBalancing a oe:Worldview ;
+    skos:definition "rates must be just and reasonable; structural flaws of market design explain outcomes"@en ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" .
+
+enr:wv_ReputationManagement a oe:Worldview ;
+    skos:definition "public blame attribution is a communicative contest to be managed"@en ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" .
+
+enr:AssociatedPress a prov:Agent .
+
+enr:GeneratorsAndMarketers a oe:ChangingObject .
+
+enr:PriceGouging a oe:EventType ;
+    skos:prefLabel "PriceGouging" .
+
+enr:SanDiegoUnionTribune a prov:Agent .
+
+enr:SellerManipulation a oe:EventType ;
+    skos:prefLabel "SellerManipulation" .
+
+enr:act_A01 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-08-14T10:42:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_14290787_1075846166614 ;
+    prov:wasAssociatedWith enr:Kean ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A01 ;
+    oe:hasInterpretationType oe:ExemplaryInterpretation ;
+    oe:hasTemporalOrientation oe:Presentist ;
+    oe:interprets enr:re_Kean_SupplyObstruction ;
+    oe:producedIn enr:ctx_A01 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A04 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-08-14T17:42:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_716812_1075846166852 ;
+    prov:wasAssociatedWith enr:EnronPublicPolicy ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A04 ;
+    oe:hasInterpretationType oe:ExemplaryInterpretation ;
+    oe:hasTemporalOrientation oe:Presentist ;
+    oe:interprets enr:re_EnronPP_RegulationFailure ;
+    oe:producedIn enr:ctx_A04 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A05 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-09-22T13:40:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_8415828_1075842977222 ;
+    prov:wasAssociatedWith enr:SacBee ;
+    oe:basedOn enr:wv_ConsumerProtection ;
+    oe:hasInterpretationCriterion enr:crit_A05 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Retrospective ;
+    oe:interprets enr:re_SacBee_Manipulation ;
+    oe:producedIn enr:ctx_A05 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A06 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-11-01T17:13:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_3209089_1075856267861 ;
+    prov:wasAssociatedWith enr:FERC ;
+    oe:basedOn enr:wv_RegulatoryBalancing ;
+    oe:hasInterpretationCriterion enr:crit_A06 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Retrospective ;
+    oe:interprets enr:re_FERC_FlawedMarket ;
+    oe:producedIn enr:ctx_A06 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A09 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-12-12T15:07:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_14658458_1075843072589 ;
+    prov:wasAssociatedWith enr:Kean ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A09 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Presentist ;
+    oe:interprets enr:re_Kean_SupplyObstruction ;
+    oe:producedIn enr:ctx_A09 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A13 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-03-15T00:00:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_29321285_1075843394361 ;
+    prov:wasAssociatedWith enr:Abraham ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A13 ;
+    oe:hasInterpretationType oe:ExemplaryInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_Abraham_SupplyEmergency ;
+    oe:producedIn enr:ctx_A13 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "inferred-from-text" .
+
+enr:act_A18 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-04-12T07:25:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_22433150_1075847600814 ;
+    prov:wasAssociatedWith enr:Tribolet ;
+    oe:basedOn enr:wv_CreditorProtection ;
+    oe:hasInterpretationCriterion enr:crit_A18 ;
+    oe:hasInterpretationType oe:TraditionalInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_Tribolet_CreditorExposure ;
+    oe:producedIn enr:ctx_A18 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A19 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-05-24T10:08:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_22014418_1075853221515 ;
+    prov:wasAssociatedWith enr:Tribolet ;
+    oe:basedOn enr:wv_CreditorProtection ;
+    oe:hasInterpretationCriterion enr:crit_A19 ;
+    oe:hasInterpretationType oe:GeneticInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_Tribolet_CreditorExposure ;
+    oe:producedIn enr:ctx_A19 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A21 a oe:RelationalInterpretation ;
+    prov:startedAtTime "2001-05-22T14:02:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_30089639_1075843518185 ;
+    prov:wasAssociatedWith enr:Walsh ;
+    oe:basedOn enr:wv_PoliticalRealism ;
+    oe:hasInterpretationCriterion enr:crit_A21 ;
+    oe:hasInterpretationType oe:GeneticInterpretation ;
+    oe:hasTemporalOrientation oe:Retrospective ;
+    oe:interprets enr:re_Walsh_BankruptcyGame ;
+    oe:producedIn enr:ctx_A21 ;
+    oe:relatesInterpretations enr:act_A12,
+        enr:act_A22 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A22 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-05-22T00:00:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_30089639_1075843518185 ;
+    prov:wasAssociatedWith enr:Angelides ;
+    oe:hasInterpretationCriterion enr:crit_A22 ;
+    oe:hasInterpretationType oe:GeneticInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_Angelides_SCEInsolvency ;
+    oe:producedIn enr:ctx_A22 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "inferred-from-text" .
+
+enr:act_A24 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-09-01T13:56:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_22945919_1075842959237 ;
+    prov:wasAssociatedWith enr:Shames ;
+    oe:basedOn enr:wv_ConsumerProtection ;
+    oe:hasInterpretationCriterion enr:crit_A24 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Retrospective ;
+    oe:interprets enr:re_Shames_SellerControl ;
+    oe:producedIn enr:ctx_A24 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:email_13095701_1075856223012 a oex:EmailMessage ;
+    rdfs:label "California Update 1/31/01" ;
+    dcterms:identifier "<13095701.1075856223012.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-01-31T11:48:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "kristin.walsh@enron.com" ;
+    oex:sha256 "14fdab74f41e9cd8997ac4bd56a2e35e0b186a291c13299a5d2038450be33de6" .
+
+enr:email_13411164_1075846188375 a oex:EmailMessage ;
+    rdfs:label "Re: approval of FERC article for eBiz" ;
+    dcterms:identifier "<13411164.1075846188375.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-11-01T17:15:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "steven.kean@enron.com" ;
+    oex:sha256 "774e14fe263a0fe2476faf041205accf18ee42f353bcbe5e6a458ccd60bc0e7a" .
+
+enr:email_13685960_1075846171560 a oex:EmailMessage ;
+    rdfs:label "Upcoming Advisory Council Meeting" ;
+    dcterms:identifier "<13685960.1075846171560.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-08-29T11:38:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "steven.kean@enron.com" ;
+    oex:sha256 "6419fe80b3e4a90a5ef4d3ddeac488b7ce1af2c878c1192c82f5f988947d8f11" .
+
+enr:email_14290787_1075846166614 a oex:EmailMessage ;
+    rdfs:label "California Power Issue" ;
+    dcterms:identifier "<14290787.1075846166614.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-08-14T10:42:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "steven.kean@enron.com" ;
+    oex:sha256 "1de35e6c7b85497478b773a7861b8ff6f71e6b3dc1591ef96d128a5905488260" .
+
+enr:email_14658458_1075843072589 a oex:EmailMessage ;
+    rdfs:label "Re: Draft Talking points about California Gas market" ;
+    dcterms:identifier "<14658458.1075843072589.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-12-12T15:07:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "steven.kean@enron.com" ;
+    oex:sha256 "134db68eb30f64819f5db4788870f98e51583a7e46f0f86541aec2ef752d070e" .
+
+enr:email_17720581_1075840903917 a oex:EmailMessage ;
+    rdfs:label "California Update #2, 2/23/01" ;
+    dcterms:identifier "<17720581.1075840903917.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-02-23T22:22:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "kristin.walsh@enron.com" ;
+    oex:sha256 "5c3f71a44af31a4372e378599b44f197b3339dcf1925c3f7cefdc538cacaa958" .
+
+enr:email_22014418_1075853221515 a oex:EmailMessage ;
+    rdfs:label "RE: PG&E Action before Bankruptcy Court" ;
+    dcterms:identifier "<22014418.1075853221515.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-05-24T10:08:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "michael.tribolet@enron.com" ;
+    oex:sha256 "368bff74d3dd26641a28966209aee371be608cb428cc39eba14d27e18a97e310" .
+
+enr:email_22433150_1075847600814 a oex:EmailMessage ;
+    rdfs:label "FW: Enron" ;
+    dcterms:identifier "<22433150.1075847600814.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-04-12T07:25:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "michael.tribolet@enron.com" ;
+    oex:sha256 "b6788c722b00dfba3564a830a54db69e15bfd54936f97b16bb3995ff6270c588" .
+
+enr:email_27911004_1075843541830 a oex:EmailMessage ;
+    rdfs:label "Re: \"To the Point\" Radio Show" ;
+    dcterms:identifier "<27911004.1075843541830.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-05-30T12:06:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "jeff.dasovich@enron.com" ;
+    oex:sha256 "27cd4d813b63bdfd1f6308260a932fdfd6edaa9f9dd903dbf877f907330f96d8" .
+
+enr:email_28714256_1075843416912 a oex:EmailMessage ;
+    rdfs:label "Re: Response Statement to PG&E's Ch. 11 Filing" ;
+    dcterms:identifier "<28714256.1075843416912.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-04-06T13:50:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "jeff.dasovich@enron.com" ;
+    oex:sha256 "5cabcfeb19561613a1d99fe8fa0f0081a57b00c2316c72466e0e296b98613913" .
+
+enr:email_29378922_1075843052237 a oex:EmailMessage ;
+    rdfs:label "Statement on San Diego Lawsuit" ;
+    dcterms:identifier "<29378922.1075843052237.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-11-29T18:00:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "karen.denne@enron.com" ;
+    oex:sha256 "5860822d35723f9b8c0fd6c66cbb861a12607ded3f02098a9cb95911923a41c7" .
+
+enr:email_31087568_1075846174117 a oex:EmailMessage ;
+    rdfs:label "(no subject)" ;
+    dcterms:identifier "<31087568.1075846174117.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-09-13T09:44:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "steven.kean@enron.com" ;
+    oex:sha256 "0aae50bc2593104410f4af1bca29a7efa00ff9d0c7bedb479b248ca8c3ecbb2d" .
+
+enr:email_3901232_1075843403288 a oex:EmailMessage ;
+    rdfs:label "QF situation good example of why price caps make things worse; what Sokol said at press conference yesterday" ;
+    dcterms:identifier "<3901232.1075843403288.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-03-23T10:21:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "jeff.dasovich@enron.com" ;
+    oex:sha256 "a03f1a5bd8a9667ca5b56036636f45b4a62ffc927fa0ba37547238bf89105798" .
+
+enr:email_7997110_1075843348616 a oex:EmailMessage ;
+    rdfs:label "Re: Cal ISO Not Filing CM Proposal at FERC - EPMI Response?" ;
+    dcterms:identifier "<7997110.1075843348616.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-02-05T08:47:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "richard.shapiro@enron.com" ;
+    oex:sha256 "b9a257da17dda1da0db19eb4fc41542e5fd66f281dc8cdbf42b100978987f37f" .
+
+enr:news_A24 a oex:NewsItem ;
+    oex:attestedIn enr:email_22945919_1075842959237 .
+
+enr:qc_PGEBankruptcy a oe:DirectQC ;
+    rdfs:label "PG&E files for Chapter 11 (6 Apr 2001)"@en ;
+    oe:hasChangingObject enr:PGE ;
+    oe:hasChangingQuality enr:legalStatus ;
+    oe:occursIn enr:sceneCA ;
+    oe:refinesChange enr:qc_UtilityInsolvency .
+
+enr:qc_SitingBlocked a oe:DirectQC ;
+    rdfs:label "proposed plants are not sited/built"@en ;
+    oe:hasChangingObject enr:CA_GenerationFleet ;
+    oe:hasChangingQuality enr:newCapacityAdditions ;
+    oe:occursIn enr:sceneCA .
+
+enr:re_Abraham_SupplyEmergency a oe:IndividualRE ;
+    prov:startedAtTime "2001-03-15T00:00:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:SupplyEmergency ;
+    oe:hasCoreContext enr:qc_PriceCapRegime ;
+    oe:hasFocalPart enr:qc_SupplyShortfall ;
+    oe:individuatedBy enr:Abraham ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Blackouts 'appear inevitable' (focal: shortfall); price controls 'would make shortages worse' (core context)."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_FERC_FlawedMarket a oe:CollectiveRE ;
+    prov:startedAtTime "2000-11-01T17:13:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:MarketDesignFlaw ;
+    oe:hasCharacterizingContext enr:qc_SpotMarketShift ;
+    oe:hasCoreContext enr:qc_SupplyShortfall ;
+    oe:hasFocalPart enr:qc_WholesalePriceRise ;
+    oe:individuatedBy enr:FERC ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Unjust rates due to 'seriously flawed' market structure and rules (characterizing) in conjunction with tight supply (core)."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_PGE_PriceGouging a oe:CollectiveRE ;
+    prov:startedAtTime "2000-12-15T00:00:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:PriceGouging ;
+    oe:hasCoreContext enr:qc_SellerMarketPower ;
+    oe:hasExternalContext enr:qc_PriceCapRegime ;
+    oe:hasFocalPart enr:qc_WholesalePriceRise ;
+    oe:individuatedBy enr:PGE ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "'exposed to price gouging'; FERC remedies (external context) insufficient."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Tribolet_CreditorExposure a oe:IndividualRE ;
+    prov:startedAtTime "2001-04-12T07:25:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:CounterpartyCreditEvent ;
+    oe:hasCoreContext enr:qc_RetailRateFreeze ;
+    oe:hasFocalPart enr:qc_PGEBankruptcy ;
+    oe:individuatedBy enr:Tribolet ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "PG&E bankruptcy framed as creditor-committee matter; recovery hinges on undercollection accounting."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:wv_CreditorProtection a oe:Worldview ;
+    skos:definition "exposures must be protected and recovered; counterparty solvency is the central fact"@en ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" .
+
+enr:wv_RegulatedUtility a oe:Worldview ;
+    skos:definition "utilities are victims of wholesale sellers; regulators must cap prices and order refunds"@en ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" .
+
+enr:Abraham a oe:IndividualAgent ;
+    rdfs:label "Spencer Abraham" ;
+    oe:playsRole enr:role_Abraham ;
+    oex:internalToEnron false .
+
+enr:Angelides a oe:IndividualAgent ;
+    rdfs:label "Phil Angelides" ;
+    oe:playsRole enr:role_Angelides ;
+    oex:internalToEnron false .
+
+enr:Baum a oe:IndividualAgent ;
+    rdfs:label "Steve Baum" ;
+    oe:playsRole enr:role_Baum ;
+    oex:internalToEnron false .
+
+enr:CA_WholesaleMarket a oe:ChangingObject .
+
+enr:Davis a oe:IndividualAgent ;
+    rdfs:label "Gray Davis" ;
+    oe:playsRole enr:role_Davis ;
+    oex:internalToEnron false .
+
+enr:Denne a oe:IndividualAgent ;
+    rdfs:label "Karen Denne" ;
+    oe:playsRole enr:role_Denne ;
+    oex:internalToEnron true .
+
+enr:FERC a oe:CollectiveAgent ;
+    rdfs:label "Federal Energy Regulatory Commission" ;
+    oe:playsRole enr:role_FERC ;
+    oex:internalToEnron false .
+
+enr:RegulatoryFailure a oe:EventType ;
+    skos:prefLabel "RegulatoryFailure" .
+
+enr:SacBee a oe:CollectiveAgent ;
+    rdfs:label "Sacramento Bee editorial board" ;
+    oe:playsRole enr:role_SacBee ;
+    oex:internalToEnron false .
+
+enr:Shapiro a oe:IndividualAgent ;
+    rdfs:label "Richard Shapiro" ;
+    oe:playsRole enr:role_Shapiro ;
+    oex:internalToEnron true .
+
+enr:Skilling a oe:IndividualAgent ;
+    rdfs:label "Jeffrey K. Skilling" ;
+    oe:playsRole enr:role_Skilling ;
+    oex:internalToEnron true .
+
+enr:act_A02 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-08-29T11:38:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_13685960_1075846171560 ;
+    prov:wasAssociatedWith enr:Kean ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A02 ;
+    oe:hasInterpretationType oe:CriticalInterpretation ;
+    oe:hasTemporalOrientation oe:Presentist ;
+    oe:interprets enr:re_Kean_SupplyObstruction ;
+    oe:producedIn enr:ctx_A02 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A03 a oe:InterpretationAct ;
+    prov:startedAtTime "2000-09-13T09:44:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_31087568_1075846174117 ;
+    prov:wasAssociatedWith enr:Kean ;
+    oe:basedOn enr:wv_MarketLiberal ;
+    oe:hasInterpretationCriterion enr:crit_A03 ;
+    oe:hasInterpretationType oe:ExemplaryInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_Kean_SupplyObstruction ;
+    oe:producedIn enr:ctx_A03 ;
+    oe:reinterprets enr:act_A02 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A11 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-01-31T11:48:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_13095701_1075856223012 ;
+    prov:wasAssociatedWith enr:Walsh ;
+    oe:basedOn enr:wv_PoliticalRealism ;
+    oe:hasInterpretationCriterion enr:crit_A11 ;
+    oe:hasInterpretationType oe:GeneticInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_Walsh_BankruptcyGame ;
+    oe:producedIn enr:ctx_A11 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:act_A12 a oe:InterpretationAct ;
+    prov:startedAtTime "2001-02-23T22:22:00+00:00"^^xsd:dateTime ;
+    prov:used enr:email_17720581_1075840903917 ;
+    prov:wasAssociatedWith enr:Walsh ;
+    oe:basedOn enr:wv_PoliticalRealism ;
+    oe:hasInterpretationCriterion enr:crit_A12 ;
+    oe:hasInterpretationType oe:GeneticInterpretation ;
+    oe:hasTemporalOrientation oe:Prospective ;
+    oe:interprets enr:re_Walsh_BankruptcyGame ;
+    oe:producedIn enr:ctx_A12 ;
+    oe:reinterprets enr:act_A11 ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:timeBasis "message-date" .
+
+enr:email_10005754_1075844135318 a oex:EmailMessage ;
+    rdfs:label "FERC restructures Cal-ISO" ;
+    dcterms:identifier "<10005754.1075844135318.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-12-18T09:41:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "jeffery.fawcett@enron.com" ;
+    oex:sha256 "239f9a2db987d22e8e8cc116dc70883df55a909a76a613fa8913da8fe1775c3e" .
+
+enr:email_18570867_1075849283952 a oex:EmailMessage ;
+    rdfs:label "Energy Issues" ;
+    dcterms:identifier "<18570867.1075849283952.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-06-25T10:35:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "miyung.buster@enron.com" ;
+    oex:sha256 "894f810e77edc1c0df33fac1828df84369ad1c48440b4a15b35c479e43c18048" .
+
+enr:email_19364023_1075846165444 a oex:EmailMessage ;
+    rdfs:label "WSJ: Cal.Gov.cuts S.Cal Rates ~50%..." ;
+    dcterms:identifier "<19364023.1075846165444.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-08-10T05:15:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "dsgeorge@firstworld.net" ;
+    oex:sha256 "182fe8c6eb31e3a69e31a7522168b28c83948576b9c675e889b5968631de9b6d" .
+
+enr:email_3209089_1075856267861 a oex:EmailMessage ;
+    rdfs:label "Alliance Info Alert: FERC Report on Western Markets" ;
+    dcterms:identifier "<3209089.1075856267861.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-11-01T17:13:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "bounce-app-ippexecs-33275@ls.eei.org" ;
+    oex:sha256 "9858330a4a9705472a60ccaeff30670a6f830025bf4f34fc850c08c0ef4b56ef" .
+
+enr:email_716812_1075846166852 a oex:EmailMessage ;
+    rdfs:label "Talking Points re \"reregulation\" in California" ;
+    dcterms:identifier "<716812.1075846166852.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-08-14T17:42:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "maureen.mcvicker@enron.com" ;
+    oex:sha256 "1d4376348c90a607defea095c923dbf849e9c8b66cff00d81ac70c3e531ef56e" .
+
+enr:email_8069579_1075843400180 a oex:EmailMessage ;
+    rdfs:label "Everyone's to blame but the Governor" ;
+    dcterms:identifier "<8069579.1075843400180.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-03-21T10:32:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "jeff.dasovich@enron.com" ;
+    oex:sha256 "c2f3b82a39cfcb377cbc8f4449315359b3974b226ff7747b3387e74268ff4f95" .
+
+enr:email_8415828_1075842977222 a oex:EmailMessage ;
+    rdfs:label "Editorial from Today's Sac Bee" ;
+    dcterms:identifier "<8415828.1075842977222.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-09-22T13:40:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "jeff.dasovich@enron.com" ;
+    oex:sha256 "211cf4276f62d4e3906f28afcc4759efd2d360ca66777931953139f85295ad0a" .
+
+enr:qc_PriceCapRegime a oe:DirectQC ;
+    rdfs:label "price caps are imposed/tightened (FERC soft cap, caps on QFs)"@en ;
+    oe:hasChangingObject enr:CA_MarketRules ;
+    oe:hasChangingQuality enr:priceCapStringency ;
+    oe:occursIn enr:sceneCA .
+
+enr:qc_RetailRateFreeze a oe:DirectQC ;
+    rdfs:label "frozen retail rates open an undercollection gap"@en ;
+    oe:hasChangingObject enr:IOU_RetailTariff ;
+    oe:hasChangingQuality enr:costRecoveryGap ;
+    oe:occursIn enr:sceneCA .
+
+enr:qc_SpotMarketShift a oe:IndirectQC ;
+    rdfs:label "purchases shift from forward/PX to ISO spot market"@en ;
+    oe:hasChangingObject enr:CA_WholesaleMarket ;
+    oe:hasChangingQuality enr:shareOfSpotPurchases ;
+    oe:occursIn enr:sceneCA ;
+    oex:qualityBearer enr:CA_ISO_RealTimeMarket .
+
+enr:re_SacBee_Manipulation a oe:CollectiveRE ;
+    prov:startedAtTime "2000-09-22T13:40:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:SellerManipulation ;
+    oe:hasCharacterizingContext enr:qc_SpotMarketShift ;
+    oe:hasCoreContext enr:qc_SellerMarketPower ;
+    oe:hasFocalPart enr:qc_WholesalePriceRise ;
+    oe:individuatedBy enr:SacBee ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Editorial 'How energy producers manipulate California': price rise explained by producers' behaviour; spot-market shift is how it happened."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:re_Walsh_BankruptcyGame a oe:IndividualRE ;
+    prov:startedAtTime "2001-01-31T11:48:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:PoliticalBargaining ;
+    oe:hasCoreContext enr:qc_StateAsBuyer ;
+    oe:hasFocalPart enr:qc_UtilityInsolvency ;
+    oe:individuatedBy enr:Walsh ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Bankruptcy as the stake of a political game ('poker table in Sacramento') around Davis's rate/bond plan."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+enr:wv_ConsumerProtection a oe:Worldview ;
+    skos:definition "markets controlled by sellers harm ratepayers; public authority must protect consumers"@en ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" .
+
+enr:wv_PoliticalRealism a oe:Worldview ;
+    skos:definition "outcomes are driven by political interests and bargaining among actors"@en ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" .
+
+enr:EnronPublicPolicy a oe:CollectiveAgent ;
+    rdfs:label "Enron Government Affairs / Public Policy (Kean's office)" ;
+    oe:playsRole enr:role_EnronPublicPolicy ;
+    oex:internalToEnron true .
+
+enr:PGE a oe:ChangingObject,
+        oe:CollectiveAgent ;
+    rdfs:label "Pacific Gas and Electric Co." ;
+    oe:playsRole enr:role_PGE ;
+    oex:internalToEnron false .
+
+enr:Shames a oe:IndividualAgent ;
+    rdfs:label "Michael Shames" ;
+    oe:playsRole enr:role_Shames ;
+    oex:internalToEnron false .
+
+enr:email_22945919_1075842959237 a oex:EmailMessage ;
+    rdfs:label "Legislative package only delays pain, critics warn" ;
+    dcterms:identifier "<22945919.1075842959237.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2000-09-01T13:56:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "jeff.dasovich@enron.com" ;
+    oex:sha256 "0ace98ce27600af6106c880da7b9e60bb27f3c1a96f0b35b01674655a45f9ea6" .
+
+enr:qc_UtilityInsolvency a oe:DirectQC ;
+    rdfs:label "investor-owned utilities lose creditworthiness / go bankrupt"@en ;
+    oe:hasChangingObject enr:CA_IOUs ;
+    oe:hasChangingQuality enr:creditworthiness ;
+    oe:occursIn enr:sceneCA .
+
+enr:re_Kean_SupplyObstruction a oe:IndividualRE ;
+    prov:startedAtTime "2000-08-14T10:42:00+00:00"^^xsd:dateTime ;
+    oe:classifiedBy enr:RegulatoryObstructionOfSupply ;
+    oe:hasCoreContext enr:qc_SitingBlocked,
+        enr:qc_SupplyShortfall ;
+    oe:hasFocalPart enr:qc_WholesalePriceRise ;
+    oe:individuatedBy enr:Kean ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" ;
+    oex:rationale "Kean: 'demand increases and new supplies are inhibited so prices go up and shortages ensue'; siting is the indispensable background. v2: single focal part required -> price rise is focal; shortage and siting are core context."@en ;
+    oex:timeBasis "earliest attestation in corpus" .
+
+oe:ExemplaryInterpretation a oe:InterpretationType .
+
+oe:GeneticInterpretation a oe:InterpretationType .
+
+enr:Tribolet a oe:IndividualAgent ;
+    rdfs:label "Michael Tribolet" ;
+    oe:playsRole enr:role_Tribolet ;
+    oex:internalToEnron true .
+
+enr:email_29321285_1075843394361 a oex:EmailMessage ;
+    rdfs:label "(no subject)" ;
+    dcterms:identifier "<29321285.1075843394361.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-03-16T12:09:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "jeff.dasovich@enron.com" ;
+    oex:sha256 "65d715d85d3ecf9467f848919fe23faabe62ae21dd8dcb22701fa36409c1f005" .
+
+enr:email_30089639_1075843518185 a oex:EmailMessage ;
+    rdfs:label "California Update 5/22/01" ;
+    dcterms:identifier "<30089639.1075843518185.JavaMail.evans@thyme>" ;
+    prov:generatedAtTime "2001-05-22T14:02:00+00:00"^^xsd:dateTime ;
+    prov:hadPrimarySource enr:corpus_enronSubset ;
+    oex:sender "kristin.walsh@enron.com" ;
+    oex:sha256 "7d85063c6c89535fe77d08c276cbddac980c1ac90511040bd22f6a3209e6b05a" .
+
+enr:qc_SupplyShortfall a oe:DirectQC ;
+    rdfs:label "available supply falls short of demand"@en ;
+    oe:hasChangingObject enr:CA_PowerSupply ;
+    oe:hasChangingQuality enr:reserveMargin ;
+    oe:occursIn enr:sceneCA .
+
+enr:qc_SellerMarketPower a oe:DirectQC ;
+    rdfs:label "sellers exercise market power (CONTESTED)"@en ;
+    oe:hasChangingObject enr:GeneratorsAndMarketers ;
+    oe:hasChangingQuality enr:markupOverCompetitivePrice ;
+    oe:occursIn enr:sceneCA .
+
+enr:qc_WholesalePriceRise a oe:DirectQC ;
+    rdfs:label "wholesale electricity prices rise sharply"@en ;
+    oe:hasChangingObject enr:CA_WholesaleMarket ;
+    oe:hasChangingQuality enr:wholesalePriceLevel ;
+    oe:occursIn enr:sceneCA .
+
+oe:Presentist a oe:TemporalOrientation .
+
+oe:Retrospective a oe:TemporalOrientation .
+
+enr:Walsh a oe:IndividualAgent ;
+    rdfs:label "Kristin Walsh" ;
+    oe:playsRole enr:role_Walsh ;
+    oex:internalToEnron true .
+
+oe:Prospective a oe:TemporalOrientation .
+
+enr:Kean a oe:IndividualAgent ;
+    rdfs:label "Steven J. Kean" ;
+    oe:playsRole enr:role_Kean ;
+    oex:internalToEnron true .
+
+enr:wv_MarketLiberal a oe:Worldview ;
+    skos:definition "competitive markets work; crises stem from regulatory interference and insufficient deregulation"@en ;
+    oex:annotatedBy enr:annotatorA ;
+    oex:annotationStatus "pending human review" .
+
+oe:CriticalInterpretation a oe:InterpretationType .
+
+enr:Dasovich a oe:IndividualAgent ;
+    rdfs:label "Jeff Dasovich" ;
+    oe:playsRole enr:role_Dasovich ;
+    oex:internalToEnron true .
+
+enr:sceneCA a oe:Scene ;
+    rdfs:label "California electricity system, Aug 2000 - Jun 2001"@en ;
+    oe:hasExtent enr:extent_CA_2000_2001 .
+
+enr:corpus_enronSubset a prov:Entity ;
+    rdfs:label "documents_subset_200008_200106.jsonl (293,442 e-mails)" .
+
+enr:annotatorA a prov:SoftwareAgent ;
+    rdfs:label "Annotator A: LLM (Claude); pending human review" .
+

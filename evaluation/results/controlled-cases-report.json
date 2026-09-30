@@ -1,0 +1,58 @@
+[
+ {
+  "id": "E00",
+  "desc": "control: Enron graph",
+  "violations": [],
+  "warnings": [],
+  "hermit": "consistent",
+  "expected": {
+   "shacl": [],
+   "owl": "consistent"
+  },
+  "pass": true
+ },
+ {
+  "id": "E01",
+  "desc": "real data: Kean's earlier annotation (two focal parts)",
+  "violations": [
+   "hasFocalPart/MaxCountConstraintComponent/A RecognizedEvent must have exactly one oe:hasFocalPart whose value is an oe:QualitativeChange."
+  ],
+  "warnings": [],
+  "hermit": "inconsistent",
+  "expected": {
+   "shacl": [
+    "hasFocalPart/MaxCount"
+   ],
+   "owl": "inconsistent"
+  },
+  "pass": true
+ },
+ {
+  "id": "E02",
+  "desc": "real data: Angelides act without Worldview (allowed; this is the built graph)",
+  "violations": [],
+  "warnings": [],
+  "hermit": "consistent",
+  "expected": {
+   "shacl": [],
+   "owl": "consistent"
+  },
+  "pass": true
+ },
+ {
+  "id": "E03",
+  "desc": "real data: Shapiro's event without core context",
+  "violations": [
+   "hasCoreContext/MinCountConstraintComponent/A RecognizedEvent must have at least one oe:hasCoreContext whose values are oe:QualitativeChanges."
+  ],
+  "warnings": [],
+  "hermit": "consistent",
+  "expected": {
+   "shacl": [
+    "hasCoreContext/MinCount"
+   ],
+   "owl": "consistent"
+  },
+  "pass": true
+ }
+]

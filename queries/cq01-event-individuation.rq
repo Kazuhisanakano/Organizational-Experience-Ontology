@@ -1,0 +1,8 @@
+# OEO -- query over the union of ontology and instance data; no OWL entailment required.
+# CQ1: For each Agent, which QualitativeChanges are selected as the focal part and core context,
+#      and under which EventType is the resulting RecognizedEvent classified?
+PREFIX oe: <https://example.org/oe#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?agent ?event ?focal ?core ?type WHERE {
+  ?event oe:individuatedBy ?agent ; oe:hasFocalPart ?focal ; oe:hasCoreContext ?core ; oe:classifiedBy ?type .
+} ORDER BY ?agent ?event ?core

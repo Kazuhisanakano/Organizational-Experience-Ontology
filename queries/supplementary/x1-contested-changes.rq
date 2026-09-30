@@ -1,0 +1,8 @@
+# X1 (supplementary): changes used in some Agent's event core while another Agent's act denies they occurred
+PREFIX oe: <https://example.org/oe#>
+PREFIX oex: <https://example.org/oe/ext#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?change (GROUP_CONCAT(DISTINCT STR(?user); separator=" ") AS ?usedInCoreBy) (GROUP_CONCAT(DISTINCT STR(?denier); separator=" ") AS ?deniedBy) WHERE {
+  ?act oex:deniesChange ?change ; prov:wasAssociatedWith ?denier .
+  ?e oe:individuatedBy ?user . { ?e oe:hasFocalPart ?change } UNION { ?e oe:hasCoreContext ?change }
+} GROUP BY ?change

@@ -1,0 +1,13 @@
+# OEO -- query over the union of ontology and instance data; no OWL entailment required.
+# CQ6: Which Worldview is mobilized by each InterpretationAct concerning RecognizedEvents individuated from the same Scene?
+# Evaluable WITHOUT OWL reasoning: the Scene of an event = the Scene of its focal part (property path
+#   oe:hasFocalPart/oe:occursIn); class membership via rdfs:subClassOf* (the TBox must be in the dataset).
+PREFIX oe: <https://example.org/oe#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+# oe:basedOn is optional: acts without a recorded Worldview are listed with ?worldview unbound ("not recorded").
+SELECT ?scene ?act ?agent ?event ?worldview WHERE {
+  ?act oe:interprets ?event ; prov:wasAssociatedWith ?agent .
+  ?event oe:hasFocalPart/oe:occursIn ?scene .
+  OPTIONAL { ?act oe:basedOn ?worldview }
+} ORDER BY ?scene ?act ?event

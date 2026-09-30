@@ -1,0 +1,60 @@
+{
+  "report": "controlled-cases-report.json",
+  "ontology": [
+    "ontology/oeo.ttl"
+  ],
+  "shapes": [
+    "ontology/oeo-shapes.ttl",
+    "ontology/oeo-enron-shapes.ttl"
+  ],
+  "base": [
+    "data/enron-annotations.ttl",
+    "ontology/oeo-enron-extension.ttl"
+  ],
+  "cases": [
+    {
+      "id": "E00",
+      "desc": "control: Enron graph",
+      "shacl": [],
+      "owl": "consistent",
+      "extra_ont": [
+        "ontology/oeo-enron-extension.ttl"
+      ]
+    },
+    {
+      "id": "E01",
+      "add": "evaluation/cases/e01-two-focal-add.ttl",
+      "remove": "evaluation/cases/e01-two-focal-remove.ttl",
+      "desc": "real data: Kean's earlier annotation (two focal parts)",
+      "shacl": [
+        "hasFocalPart/MaxCount"
+      ],
+      "owl": "inconsistent",
+      "extra_ont": [
+        "ontology/oeo-enron-extension.ttl"
+      ]
+    },
+    {
+      "id": "E02",
+      "remove": null,
+      "desc": "real data: Angelides act without Worldview (allowed; this is the built graph)",
+      "shacl": [],
+      "owl": "consistent",
+      "extra_ont": [
+        "ontology/oeo-enron-extension.ttl"
+      ]
+    },
+    {
+      "id": "E03",
+      "remove": "evaluation/cases/e03-missing-core-remove.ttl",
+      "desc": "real data: Shapiro's event without core context",
+      "shacl": [
+        "hasCoreContext/MinCount"
+      ],
+      "owl": "consistent",
+      "extra_ont": [
+        "ontology/oeo-enron-extension.ttl"
+      ]
+    }
+  ]
+}

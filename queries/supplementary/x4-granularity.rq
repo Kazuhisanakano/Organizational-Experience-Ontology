@@ -1,0 +1,7 @@
+# X4 (supplementary): QC granularity via oe:refinesChange -- events whose focal parts coincide once refined changes are lifted
+PREFIX oe: <https://example.org/oe#>
+PREFIX oex: <https://example.org/oe/ext#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?coarse (GROUP_CONCAT(DISTINCT CONCAT(STRAFTER(STR(?e), "enron/"), "[", STRAFTER(STR(?f), "enron/"), "]"); separator=" ") AS ?eventsWithFocal) WHERE {
+  ?e oe:hasFocalPart ?f . ?f oe:refinesChange* ?coarse . FILTER NOT EXISTS { ?coarse oe:refinesChange ?up }
+} GROUP BY ?coarse HAVING (COUNT(DISTINCT ?e) > 1) ORDER BY ?coarse

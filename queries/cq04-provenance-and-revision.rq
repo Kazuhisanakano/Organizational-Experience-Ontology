@@ -1,0 +1,15 @@
+# OEO -- query over the union of ontology and instance data; no OWL entailment required.
+# CQ4: Who performed each InterpretationAct and when, which later acts reinterpret earlier acts,
+#      and which InterpretationStatements are revisions of earlier statements?
+# Evaluable WITHOUT OWL reasoning: the Scene of an event = the Scene of its focal part (property path
+#   oe:hasFocalPart/oe:occursIn); class membership via rdfs:subClassOf* (the TBox must be in the dataset).
+# DISTINCT: under entailment an act has several types, so a/rdfs:subClassOf* can match more than once.
+PREFIX oe: <https://example.org/oe#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?act ?agent ?time ?reinterpretedAct ?reinterpretationIsLater ?newStatement ?revisedStatement WHERE {
+  ?act a/rdfs:subClassOf* oe:InterpretationAct ; prov:wasAssociatedWith ?agent ; prov:startedAtTime ?time .
+  OPTIONAL { ?act oe:reinterprets ?reinterpretedAct . ?reinterpretedAct prov:startedAtTime ?t0 . }
+  BIND(?time > ?t0 AS ?reinterpretationIsLater)
+  OPTIONAL { ?newStatement prov:wasGeneratedBy ?act ; prov:wasRevisionOf ?revisedStatement . }
+} ORDER BY ?time ?act

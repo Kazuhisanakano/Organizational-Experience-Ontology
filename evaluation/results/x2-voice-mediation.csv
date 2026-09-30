@@ -1,0 +1,17 @@
+agent,internal,voice,statements,mediators
+Abraham,false,quotedSpeech,1,https://example.org/oe/enron/SF_Chronicle https://example.org/oe/enron/Dasovich
+Angelides,false,quotedSpeech,1,https://example.org/oe/enron/Walsh_source_unnamed https://example.org/oe/enron/Walsh
+Baum,false,quotedSpeech,1,https://example.org/oe/enron/WallStreetJournal https://example.org/oe/enron/DSGeorge_ALSTOM
+Davis,false,quotedSpeech,1,https://example.org/oe/enron/AssociatedPress https://example.org/oe/enron/Dasovich
+FERC,false,reportedSpeech,1,https://example.org/oe/enron/EEI_AllianceInfoAlert
+PGE,false,quotedSpeech,1,https://example.org/oe/enron/NewsOutlet_unnamed https://example.org/oe/enron/Fawcett
+SacBee,false,quotedSpeech,1,https://example.org/oe/enron/Dasovich
+Shames,false,quotedSpeech,2,https://example.org/oe/enron/SanDiegoUnionTribune https://example.org/oe/enron/Dasovich
+Dasovich,true,direct,4,
+Denne,true,direct,1,
+EnronPublicPolicy,true,direct,2,
+Kean,true,direct,5,
+Shapiro,true,direct,1,
+Skilling,true,reportedSpeech,1,https://example.org/oe/enron/Buster https://example.org/oe/enron/AssociatedPress
+Tribolet,true,direct,2,
+Walsh,true,direct,3,

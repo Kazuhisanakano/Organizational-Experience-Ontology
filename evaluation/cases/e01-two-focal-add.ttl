@@ -1,0 +1,2 @@
+@prefix enr: <https://example.org/oe/enron/> . @prefix oe: <https://example.org/oe#> .
+enr:re_Kean_SupplyObstruction oe:hasFocalPart enr:qc_SupplyShortfall .

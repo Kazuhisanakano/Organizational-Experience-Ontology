@@ -1,0 +1,12 @@
+# X3 (supplementary, real-data variant of CQ3): statements sharing a key expression -> which events do they individuate?
+PREFIX oe: <https://example.org/oe#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oex: <https://example.org/oe/ext#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?expr ?agent ?event ?type ?focal (GROUP_CONCAT(DISTINCT STR(?c); separator=" ") AS ?core) ?ctxKind ?ori WHERE {
+  VALUES (?expr ?re) { ("market is working" "markets? (is|are) working") ("market is broken" "(market is broken|broken market|broken california energy)") }
+  ?s oe:literalForm ?l ; prov:wasGeneratedBy ?a . FILTER(REGEX(STR(?l), ?re, "i"))
+  ?a prov:wasAssociatedWith ?agent ; oe:interprets ?event ; oe:producedIn ?ctx ; oe:hasTemporalOrientation ?ori .
+  ?ctx a/rdfs:subClassOf* ?ctxKind . FILTER(?ctxKind IN (oe:InstitutionalContext, oe:DialogicContext))
+  ?event oe:classifiedBy ?type ; oe:hasFocalPart ?focal ; oe:hasCoreContext ?c .
+} GROUP BY ?expr ?agent ?event ?type ?focal ?ctxKind ?ori ORDER BY ?expr ?agent

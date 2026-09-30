@@ -1,0 +1,426 @@
+@prefix oe:   <https://example.org/oe#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix org:  <http://www.w3.org/ns/org#> .
+@prefix hico: <http://purl.org/emmedi/hico/> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+
+#################################################################
+# Organizational Experience Ontology (OEO) -- OWL module
+# Conceptual semantics only. Data-integrity checks (counts, value
+# classes, role duplication, Scene coherence, temporal order) are in
+# the separate SHACL module oeo-shapes.ttl. Instance data are kept in
+# a separate file and namespace.
+#################################################################
+
+<https://example.org/oe>
+    a owl:Ontology ;
+    dct:title "Organizational Experience Ontology"@en ;
+    dct:description
+        "An ontology for event individuation and polyvocal interpretation in organizations. OWL module: class hierarchy, domains and ranges, cardinality semantics, functional properties and disjointness. Integrity constraints are provided by the SHACL module <https://example.org/oe/shapes>."@en ;
+    dct:created "2026-09-27"^^xsd:date ;
+    owl:versionInfo "0.2.1" ;
+    rdfs:comment
+        "0.2.0: OWL (conceptual semantics) and SHACL (data integrity) separated; illustrative instance moved to its own file and namespace; disjointness of the main classes; oe:reinterprets irreflexive and asymmetric; no oe:withinScene (the Scene of a RecognizedEvent is obtained by the SPARQL property path oe:hasFocalPart/oe:occursIn). 0.2.1: oe:basedOn is optional -- a Worldview is recorded only where the sources support it (static open data rarely document worldviews)."@en .
+
+#################################################################
+# External vocabulary declarations
+# Declarations only, plus hierarchy axioms that hold in the source
+# vocabularies. The meaning of the external terms is not altered.
+#################################################################
+
+prov:Activity        a owl:Class ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:Entity          a owl:Class ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:Agent           a owl:Class ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:Person          a owl:Class ; rdfs:subClassOf prov:Agent ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:Organization    a owl:Class ; rdfs:subClassOf prov:Agent ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:wasAssociatedWith a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:wasGeneratedBy    a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:wasDerivedFrom    a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:wasRevisionOf     a owl:ObjectProperty ; rdfs:subPropertyOf prov:wasDerivedFrom ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:wasInformedBy     a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:startedAtTime     a owl:DatatypeProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+
+hico:InterpretationAct       a owl:Class ; rdfs:subClassOf prov:Activity ; rdfs:isDefinedBy <http://purl.org/emmedi/hico> .
+hico:InterpretationType      a owl:Class ; rdfs:isDefinedBy <http://purl.org/emmedi/hico> .
+hico:InterpretationCriterion a owl:Class ; rdfs:isDefinedBy <http://purl.org/emmedi/hico> .
+hico:hasInterpretationType      a owl:ObjectProperty ; rdfs:isDefinedBy <http://purl.org/emmedi/hico> .
+hico:hasInterpretationCriterion a owl:ObjectProperty ; rdfs:isDefinedBy <http://purl.org/emmedi/hico> .
+
+skos:Concept   a owl:Class ; rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> .
+skos:prefLabel a owl:AnnotationProperty .
+org:Role       a owl:Class ; rdfs:subClassOf skos:Concept ; rdfs:isDefinedBy <http://www.w3.org/ns/org#> .
+
+dct:title       a owl:AnnotationProperty .
+dct:description a owl:AnnotationProperty .
+dct:created     a owl:AnnotationProperty .
+
+#################################################################
+# Event domain: classes
+#################################################################
+
+oe:Scene
+    a owl:Class ;
+    rdfs:label "Scene"@en ;
+    rdfs:comment
+        "A declared spatiotemporal frame for observing and comparing qualitative changes. Identity: two Scenes are the same only if they have the same IRI or are explicitly asserted owl:sameAs. Spatiotemporal overlap does not entail identity, and oe:hasExtent is not a key. oe:scenePartOf relates Scenes of different granularity and is not an identity relation."@en ;
+    rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty oe:hasExtent ;
+        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+        owl:onClass oe:SpatiotemporalExtent
+    ] .
+
+oe:SpatiotemporalExtent
+    a owl:Class ;
+    rdfs:label "Spatiotemporal extent"@en .
+
+oe:QualitativeChange
+    a owl:Class ;
+    rdfs:label "Qualitative change"@en ;
+    rdfs:comment "A change represented by a changing object, a changing quality, and the Scene in which it occurs."@en ;
+    rdfs:subClassOf
+        [ a owl:Restriction ; owl:onProperty oe:hasChangingObject ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:ChangingObject ] ,
+        [ a owl:Restriction ; owl:onProperty oe:hasChangingQuality ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:ChangingQuality ] ,
+        [ a owl:Restriction ; owl:onProperty oe:occursIn ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:Scene ] .
+
+oe:DirectQC
+    a owl:Class ;
+    rdfs:label "Direct qualitative change"@en ;
+    rdfs:subClassOf oe:QualitativeChange .
+
+oe:IndirectQC
+    a owl:Class ;
+    rdfs:label "Indirect qualitative change"@en ;
+    rdfs:subClassOf oe:QualitativeChange .
+
+oe:ChangingObject
+    a owl:Class ;
+    rdfs:label "Changing object"@en ;
+    rdfs:comment "Deliberately not disjoint with oe:Agent or prov:Organization: an organization may be the object of a change and an Agent at the same time."@en .
+
+oe:ChangingQuality
+    a owl:Class ;
+    rdfs:label "Changing quality"@en .
+
+oe:RecognizedEvent
+    a owl:Class ;
+    rdfs:label "Recognized event"@en ;
+    rdfs:subClassOf
+        prov:Activity ,
+        [ a owl:Restriction ; owl:onProperty oe:individuatedBy ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:Agent ] ,
+        [ a owl:Restriction ; owl:onProperty oe:hasFocalPart ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:QualitativeChange ] ,
+        [ a owl:Restriction ; owl:onProperty oe:hasCoreContext ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:QualitativeChange ] ,
+        [ a owl:Restriction ; owl:onProperty oe:classifiedBy ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:EventType ] ,
+        [ a owl:Restriction ; owl:onProperty prov:startedAtTime ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:dateTime ] .
+
+oe:IndividualRE
+    a owl:Class ;
+    rdfs:label "Individual recognized event"@en ;
+    rdfs:subClassOf
+        oe:RecognizedEvent ,
+        [ a owl:Restriction ; owl:onProperty oe:individuatedBy ; owl:allValuesFrom oe:IndividualAgent ] .
+
+oe:CollectiveRE
+    a owl:Class ;
+    rdfs:label "Collective recognized event"@en ;
+    rdfs:subClassOf
+        oe:RecognizedEvent ,
+        [ a owl:Restriction ; owl:onProperty oe:individuatedBy ; owl:allValuesFrom oe:CollectiveAgent ] .
+
+oe:EventType
+    a owl:Class ;
+    rdfs:label "Event type"@en ;
+    rdfs:subClassOf skos:Concept .
+
+#################################################################
+# Interpretation domain: classes
+#################################################################
+
+oe:InterpretationAct
+    a owl:Class ;
+    rdfs:label "Interpretation act"@en ;
+    rdfs:subClassOf
+        hico:InterpretationAct ,
+        prov:Activity ,
+        [ a owl:Restriction ; owl:onProperty oe:interprets ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:RecognizedEvent ] ,
+        [ a owl:Restriction ; owl:onProperty prov:wasAssociatedWith ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:Agent ] ,
+        [ a owl:Restriction ; owl:onProperty prov:startedAtTime ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:dateTime ] .
+
+oe:RelationalInterpretation
+    a owl:Class ;
+    rdfs:label "Relational interpretation"@en ;
+    rdfs:comment "An InterpretationAct that relates two or more InterpretationActs. The related acts may interpret different RecognizedEvents, provided that those events are individuated from the same Scene (checked in SHACL)."@en ;
+    rdfs:subClassOf
+        oe:InterpretationAct ,
+        [ a owl:Restriction ; owl:onProperty oe:relatesInterpretations ;
+          owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ; owl:onClass oe:InterpretationAct ] .
+
+oe:InterpretationStatement
+    a owl:Class ;
+    rdfs:label "Interpretation statement"@en ;
+    rdfs:subClassOf
+        prov:Entity ,
+        [ a owl:Restriction ; owl:onProperty prov:wasGeneratedBy ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onClass oe:InterpretationAct ] .
+
+oe:Context
+    a owl:Class ;
+    rdfs:label "Context"@en ;
+    rdfs:subClassOf
+        prov:Activity ,
+        [ a owl:Restriction ; owl:onProperty prov:startedAtTime ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ; owl:onDataRange xsd:dateTime ] .
+
+oe:InstitutionalContext
+    a owl:Class ;
+    rdfs:label "Institutional context"@en ;
+    rdfs:subClassOf oe:Context .
+
+oe:DialogicContext
+    a owl:Class ;
+    rdfs:label "Dialogic context"@en ;
+    rdfs:subClassOf oe:Context .
+
+oe:InterpretationType
+    a owl:Class ;
+    rdfs:label "Interpretation type"@en ;
+    rdfs:subClassOf hico:InterpretationType .
+
+oe:TemporalOrientation
+    a owl:Class ;
+    rdfs:label "Temporal orientation"@en ;
+    rdfs:subClassOf skos:Concept .
+
+oe:InterpretationCriterion
+    a owl:Class ;
+    rdfs:label "Interpretation criterion"@en ;
+    rdfs:subClassOf hico:InterpretationCriterion .
+
+oe:InterpretiveTrajectory
+    a owl:Class ;
+    rdfs:label "Interpretive trajectory"@en .
+
+#################################################################
+# Agent and Worldview domains: classes
+#################################################################
+
+oe:Worldview
+    a owl:Class ;
+    rdfs:label "Worldview"@en ;
+    rdfs:comment "A situated set of assumptions mobilized in an InterpretationAct. The only direct connection to a Worldview is InterpretationAct oe:basedOn Worldview; RecognizedEvents and Agents are not connected to Worldviews directly. Recording a Worldview is optional: static open data document worldviews only to a limited extent, and an absent oe:basedOn means 'not recorded', not 'no Worldview' (open-world assumption)."@en .
+
+oe:Agent
+    a owl:Class ;
+    rdfs:label "Agent"@en ;
+    rdfs:subClassOf prov:Agent .
+
+oe:IndividualAgent
+    a owl:Class ;
+    rdfs:label "Individual agent"@en ;
+    rdfs:subClassOf oe:Agent , prov:Person .
+
+oe:CollectiveAgent
+    a owl:Class ;
+    rdfs:label "Collective agent"@en ;
+    rdfs:subClassOf oe:Agent , prov:Organization .
+
+oe:OrganizationalRole
+    a owl:Class ;
+    rdfs:label "Organizational role"@en ;
+    rdfs:subClassOf org:Role .
+
+#################################################################
+# Disjointness
+#################################################################
+
+[] a owl:AllDisjointClasses ;
+   owl:members ( oe:Scene oe:QualitativeChange oe:RecognizedEvent oe:InterpretationAct oe:Context
+                 oe:InterpretationStatement oe:Worldview oe:Agent oe:InterpretiveTrajectory ) .
+
+oe:IndividualRE         owl:disjointWith oe:CollectiveRE .
+oe:IndividualAgent      owl:disjointWith oe:CollectiveAgent .
+oe:DirectQC             owl:disjointWith oe:IndirectQC .
+oe:InstitutionalContext owl:disjointWith oe:DialogicContext .
+
+#################################################################
+# Event domain: properties
+#################################################################
+
+oe:hasExtent
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has extent"@en ;
+    rdfs:comment "Not a key: two Scenes with the same extent are not inferred to be the same Scene."@en ;
+    rdfs:domain oe:Scene ;
+    rdfs:range oe:SpatiotemporalExtent .
+
+oe:scenePartOf
+    a owl:ObjectProperty ;
+    rdfs:label "scene part of"@en ;
+    rdfs:comment "Relation between Scenes of different granularity; not an identity relation."@en ;
+    rdfs:domain oe:Scene ;
+    rdfs:range oe:Scene .
+
+oe:hasChangingObject
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has changing object"@en ;
+    rdfs:domain oe:QualitativeChange ;
+    rdfs:range oe:ChangingObject .
+
+oe:hasChangingQuality
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has changing quality"@en ;
+    rdfs:domain oe:QualitativeChange ;
+    rdfs:range oe:ChangingQuality .
+
+oe:occursIn
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "occurs in"@en ;
+    rdfs:domain oe:QualitativeChange ;
+    rdfs:range oe:Scene .
+
+oe:refinesChange
+    a owl:ObjectProperty ;
+    rdfs:label "refines change"@en ;
+    rdfs:domain oe:QualitativeChange ;
+    rdfs:range oe:QualitativeChange .
+
+oe:individuatedBy
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "individuated by"@en ;
+    rdfs:subPropertyOf prov:wasAssociatedWith ;
+    rdfs:domain oe:RecognizedEvent ;
+    rdfs:range oe:Agent .
+
+oe:hasFocalPart
+    a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:label "has focal part"@en ;
+    rdfs:comment "The Scene from which a RecognizedEvent is individuated is the Scene in which its focal part occurs (SPARQL: ?event oe:hasFocalPart/oe:occursIn ?scene)."@en ;
+    rdfs:domain oe:RecognizedEvent ;
+    rdfs:range oe:QualitativeChange .
+
+oe:hasCoreContext
+    a owl:ObjectProperty ;
+    rdfs:label "has core context"@en ;
+    rdfs:domain oe:RecognizedEvent ;
+    rdfs:range oe:QualitativeChange .
+
+oe:hasCharacterizingContext
+    a owl:ObjectProperty ;
+    rdfs:label "has characterizing context"@en ;
+    rdfs:domain oe:RecognizedEvent ;
+    rdfs:range oe:QualitativeChange .
+
+oe:hasExternalContext
+    a owl:ObjectProperty ;
+    rdfs:label "has external context"@en ;
+    rdfs:domain oe:RecognizedEvent ;
+    rdfs:range oe:QualitativeChange .
+
+[] a owl:AllDisjointProperties ;
+   owl:members ( oe:hasFocalPart oe:hasCoreContext oe:hasCharacterizingContext oe:hasExternalContext ) .
+
+oe:classifiedBy
+    a owl:ObjectProperty ;
+    rdfs:label "classified by"@en ;
+    rdfs:domain oe:RecognizedEvent ;
+    rdfs:range oe:EventType .
+
+#################################################################
+# Interpretation domain: properties
+#################################################################
+
+oe:interprets
+    a owl:ObjectProperty ;
+    rdfs:label "interprets"@en ;
+    rdfs:domain oe:InterpretationAct ;
+    rdfs:range oe:RecognizedEvent .
+
+oe:producedIn
+    a owl:ObjectProperty ;
+    rdfs:label "produced in"@en ;
+    rdfs:domain oe:InterpretationAct ;
+    rdfs:range oe:Context .
+
+oe:hasInterpretationType
+    a owl:ObjectProperty ;
+    rdfs:label "has interpretation type"@en ;
+    rdfs:subPropertyOf hico:hasInterpretationType ;
+    rdfs:domain oe:InterpretationAct ;
+    rdfs:range oe:InterpretationType .
+
+oe:hasTemporalOrientation
+    a owl:ObjectProperty ;
+    rdfs:label "has temporal orientation"@en ;
+    rdfs:domain oe:InterpretationAct ;
+    rdfs:range oe:TemporalOrientation .
+
+oe:hasInterpretationCriterion
+    a owl:ObjectProperty ;
+    rdfs:label "has interpretation criterion"@en ;
+    rdfs:subPropertyOf hico:hasInterpretationCriterion ;
+    rdfs:domain oe:InterpretationAct ;
+    rdfs:range oe:InterpretationCriterion .
+
+oe:basedOn
+    a owl:ObjectProperty ;
+    rdfs:label "based on"@en ;
+    rdfs:comment "Directly records the Worldview mobilized in an InterpretationAct. This is the only property connecting to oe:Worldview. Optional (no minimum cardinality)."@en ;
+    rdfs:domain oe:InterpretationAct ;
+    rdfs:range oe:Worldview .
+
+oe:reinterprets
+    a owl:ObjectProperty , owl:IrreflexiveProperty , owl:AsymmetricProperty ;
+    rdfs:label "reinterprets"@en ;
+    rdfs:comment "A later InterpretationAct reinterprets an earlier one concerning the same RecognizedEvent (temporal order and shared event are checked in SHACL)."@en ;
+    rdfs:subPropertyOf prov:wasInformedBy ;
+    rdfs:domain oe:InterpretationAct ;
+    rdfs:range oe:InterpretationAct .
+
+oe:relatesInterpretations
+    a owl:ObjectProperty ;
+    rdfs:label "relates interpretations"@en ;
+    rdfs:domain oe:RelationalInterpretation ;
+    rdfs:range oe:InterpretationAct .
+
+oe:hasStage
+    a owl:ObjectProperty ;
+    rdfs:label "has stage"@en ;
+    rdfs:domain oe:InterpretiveTrajectory ;
+    rdfs:range oe:InterpretationAct .
+
+oe:tracesEvent
+    a owl:ObjectProperty ;
+    rdfs:label "traces event"@en ;
+    rdfs:comment "Optional, inference-only shortcut (hasStage o interprets). No competency question depends on it."@en ;
+    rdfs:domain oe:InterpretiveTrajectory ;
+    rdfs:range oe:RecognizedEvent ;
+    owl:propertyChainAxiom ( oe:hasStage oe:interprets ) .
+
+oe:playsRole
+    a owl:ObjectProperty ;
+    rdfs:label "plays role"@en ;
+    rdfs:domain oe:Agent ;
+    rdfs:range oe:OrganizationalRole .
+
+oe:literalForm
+    a owl:DatatypeProperty ;
+    rdfs:label "literal form"@en ;
+    rdfs:comment "The wording of an InterpretationStatement as a language-tagged string (rdf:PlainLiteral in OWL 2; the language tag is enforced in SHACL)."@en ;
+    rdfs:domain oe:InterpretationStatement ;
+    rdfs:range rdf:PlainLiteral .

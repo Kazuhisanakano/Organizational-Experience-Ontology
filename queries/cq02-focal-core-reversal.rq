@@ -1,0 +1,14 @@
+# OEO -- query over the union of ontology and instance data; no OWL entailment required.
+# CQ2: Which pairs of RecognizedEvents individuated from the same Scene reverse the focal-part and core-context roles?
+# Evaluable WITHOUT OWL reasoning: the Scene of an event = the Scene of its focal part (property path
+#   oe:hasFocalPart/oe:occursIn); class membership via rdfs:subClassOf* (the TBox must be in the dataset).
+PREFIX oe: <https://example.org/oe#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT DISTINCT ?e1 ?e2 ?scene ?qA ?qB WHERE {
+  ?e1 oe:hasFocalPart ?qA ; oe:hasCoreContext ?qB .
+  ?e2 oe:hasFocalPart ?qB ; oe:hasCoreContext ?qA .
+  ?e1 oe:hasFocalPart/oe:occursIn ?scene .
+  ?e2 oe:hasFocalPart/oe:occursIn ?scene .
+  FILTER(STR(?e1) < STR(?e2))
+} ORDER BY ?e1 ?e2

@@ -1,0 +1,13 @@
+# OEO -- query over the union of ontology and instance data; no OWL entailment required.
+# CQ5: Which InterpretationTypes, TemporalOrientations, and Contexts coexist for RecognizedEvents
+#      individuated from the same Scene?
+# Evaluable WITHOUT OWL reasoning: the Scene of an event = the Scene of its focal part (property path
+#   oe:hasFocalPart/oe:occursIn); class membership via rdfs:subClassOf* (the TBox must be in the dataset).
+PREFIX oe: <https://example.org/oe#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?scene ?type ?orientation ?context ?contextKind (GROUP_CONCAT(DISTINCT STR(?act); separator=" ") AS ?acts) WHERE {
+  ?act oe:interprets ?event ; oe:hasInterpretationType ?type ; oe:hasTemporalOrientation ?orientation ; oe:producedIn ?context .
+  ?event oe:hasFocalPart/oe:occursIn ?scene .
+  OPTIONAL { ?context a/rdfs:subClassOf* ?contextKind . FILTER(?contextKind IN (oe:InstitutionalContext, oe:DialogicContext)) }
+} GROUP BY ?scene ?type ?orientation ?context ?contextKind ORDER BY ?scene ?type ?orientation

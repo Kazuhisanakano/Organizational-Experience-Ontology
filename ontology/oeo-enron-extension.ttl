@@ -1,0 +1,63 @@
+# OEO extension module (PROPOSED for the revision; not part of the submitted OEO core).
+# (1) evidence provenance for real corpora, (2) scoped, provenanced non-interpretation,
+# (3) contested changes, (4) annotation provenance.
+@prefix oe:   <https://example.org/oe#> .
+@prefix oex:  <https://example.org/oe/ext#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+<https://example.org/oe/ext> a owl:Ontology ;
+  rdfs:comment "Extension module (v2) used with OEO v0.1.0 for the Enron validation."@en .
+dcterms:identifier a owl:AnnotationProperty .
+oex:annotatedBy a owl:AnnotationProperty . oex:annotationStatus a owl:AnnotationProperty . oex:rationale a owl:AnnotationProperty .
+oex:sender a owl:AnnotationProperty . oex:sha256 a owl:AnnotationProperty . oex:pattern a owl:AnnotationProperty .
+
+# (1) Evidence provenance
+oex:EmailMessage a owl:Class ; rdfs:subClassOf prov:Entity ; skos:definition "An e-mail in the source corpus (identified by Message-ID and SHA-256 of the message text)."@en .
+oex:NewsItem a owl:Class ; rdfs:subClassOf prov:Entity ; skos:definition "A news article/bulletin embedded (forwarded) in an e-mail."@en .
+oex:attestedIn a owl:ObjectProperty ; rdfs:range oex:EmailMessage ; skos:definition "The corpus document in which an entity is attested."@en .
+oex:VoiceMode a owl:Class ; rdfs:subClassOf skos:Concept .
+oex:direct a oex:VoiceMode , owl:NamedIndividual ; skos:prefLabel "direct: authored by the e-mail sender"@en .
+oex:quotedSpeech a oex:VoiceMode , owl:NamedIndividual ; skos:prefLabel "quoted speech: verbatim quotation inside a mediating document"@en .
+oex:reportedSpeech a oex:VoiceMode , owl:NamedIndividual ; skos:prefLabel "reported speech: paraphrase by a mediator"@en .
+oex:voiceMode a owl:ObjectProperty , owl:FunctionalProperty ; rdfs:domain oe:InterpretationStatement ; rdfs:range oex:VoiceMode .
+oex:mediatedBy a owl:ObjectProperty ; rdfs:domain oe:InterpretationStatement ; rdfs:range prov:Agent ;
+  skos:definition "Agent(s) through whom a voice reaches the corpus (reporter, outlet, forwarding employee)."@en .
+oex:timeBasis a owl:DatatypeProperty ; skos:definition "How prov:startedAtTime was obtained: 'message-date' or 'inferred-from-text'."@en .
+
+oex:qualityBearer a owl:ObjectProperty ; rdfs:domain oe:IndirectQC ; skos:definition "Proper part of the changing object in which the quality inheres (IndirectQC)."@en .
+oex:internalToEnron a owl:DatatypeProperty ; rdfs:range xsd:boolean .
+# (2) Scoped, provenanced non-interpretation (reifies oe:lacksInterpretationBy)
+oex:NonInterpretationAssertion a owl:Class ; rdfs:subClassOf prov:Entity ;
+  rdfs:subClassOf [ a owl:Restriction ; owl:onProperty oex:aboutChange ; owl:cardinality "1"^^xsd:nonNegativeInteger ] ,
+                  [ a owl:Restriction ; owl:onProperty oex:aboutAgent ; owl:cardinality "1"^^xsd:nonNegativeInteger ] .
+oex:aboutChange a owl:ObjectProperty ; rdfs:domain oex:NonInterpretationAssertion ; rdfs:range oe:QualitativeChange .
+oex:aboutAgent  a owl:ObjectProperty ; rdfs:domain oex:NonInterpretationAssertion ; rdfs:range oe:Agent .
+oex:scope a owl:ObjectProperty ; rdfs:domain oex:NonInterpretationAssertion ; rdfs:range prov:Entity ;
+  skos:definition "The body of evidence (corpus, channel, period) over which absence was established."@en .
+oex:SilenceKind a owl:Class ; rdfs:subClassOf skos:Concept .
+oex:notAttested a oex:SilenceKind , owl:NamedIndividual ; skos:prefLabel "not attested: no own and no forwarded matching text in scope"@en .
+oex:forwardedWithoutComment a oex:SilenceKind , owl:NamedIndividual ; skos:prefLabel "forwarded without comment: the change reached the agent's outbox only in forwarded text"@en .
+oex:publiclyWithheld a oex:SilenceKind , owl:NamedIndividual ; skos:prefLabel "publicly withheld: voiced internally but deliberately kept out of public communication"@en .
+oex:silenceKind a owl:ObjectProperty ; rdfs:domain oex:NonInterpretationAssertion ; rdfs:range oex:SilenceKind .
+oex:ownMatches a owl:DatatypeProperty ; rdfs:range xsd:integer . oex:forwardOnlyMatches a owl:DatatypeProperty ; rdfs:range xsd:integer .
+oex:CorpusCheck a owl:Class ; rdfs:subClassOf prov:Activity .
+
+# (3) Contested changes: an act may deny that a change occurred
+oex:deniesChange a owl:ObjectProperty ; rdfs:domain oe:InterpretationAct ; rdfs:range oe:QualitativeChange ;
+  skos:definition "The act asserts that the change did not occur (e.g., 'no market power was exercised'). Makes contested reference points explicit."@en .
+
+# External vocabulary used by the extension and the Enron data (declared for OWL 2 DL; hierarchy mirrored from PROV-O / SKOS / DCTERMS)
+@prefix dcterms: <http://purl.org/dc/terms/> .
+prov:SoftwareAgent  a owl:Class ; rdfs:subClassOf prov:Agent ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:used            a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:wasAttributedTo a owl:ObjectProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:hadPrimarySource a owl:ObjectProperty ; rdfs:subPropertyOf prov:wasDerivedFrom ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:wasQuotedFrom   a owl:ObjectProperty ; rdfs:subPropertyOf prov:wasDerivedFrom ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+prov:generatedAtTime a owl:DatatypeProperty ; rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .
+skos:definition  a owl:AnnotationProperty .
+dcterms:spatial  a owl:AnnotationProperty .
+dcterms:temporal a owl:AnnotationProperty .

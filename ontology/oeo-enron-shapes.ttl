@@ -1,0 +1,15 @@
+@prefix oe:   <https://example.org/oe#> .
+@prefix oex:  <https://example.org/oe/ext#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix oesh: <https://example.org/oe/shapes#> .
+oesh:NIAShape a sh:NodeShape ; sh:targetClass oex:NonInterpretationAssertion ;
+  sh:property [ sh:path oex:aboutChange ; sh:minCount 1 ; sh:maxCount 1 ; sh:class oe:QualitativeChange ; sh:message "X1: assertion about exactly one change." ] ,
+              [ sh:path oex:aboutAgent ; sh:minCount 1 ; sh:maxCount 1 ; sh:class oe:Agent ; sh:message "X1: assertion about exactly one Agent." ] ,
+              [ sh:path oex:silenceKind ; sh:minCount 1 ; sh:in ( oex:notAttested oex:forwardedWithoutComment oex:publiclyWithheld ) ; sh:message "X1: silence kind missing." ] ,
+              [ sh:path oex:scope ; sh:minCount 1 ; sh:message "X2: non-interpretation must state its evidential scope." ] ,
+              [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ; sh:message "X2: non-interpretation must record how it was established." ] .
+oesh:StatementEvidenceShape a sh:NodeShape ; sh:targetClass oe:InterpretationStatement ;
+  sh:property [ sh:path prov:wasDerivedFrom ; sh:minCount 1 ; sh:severity sh:Warning ; sh:message "X4w: statement without source document." ] .
+oesh: sh:declare [ sh:prefix "oex" ; sh:namespace "https://example.org/oe/ext#"^^xsd:anyURI ] .

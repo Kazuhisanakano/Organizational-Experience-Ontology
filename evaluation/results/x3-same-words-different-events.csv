@@ -1,0 +1,8 @@
+expr,agent,event,type,focal,core,ctxKind,ori
+market is broken,Baum,re_Baum_PriceGouging,PriceGouging,qc_WholesalePriceRise,https://example.org/oe/enron/qc_SellerMarketPower,InstitutionalContext,Presentist
+market is broken,PGE,re_PGE_PriceGouging,PriceGouging,qc_WholesalePriceRise,https://example.org/oe/enron/qc_SellerMarketPower,InstitutionalContext,Prospective
+market is broken,Shames,re_Shames_SellerControl,SellerManipulation,qc_WholesalePriceRise,https://example.org/oe/enron/qc_SellerMarketPower,InstitutionalContext,Retrospective
+market is broken,Skilling,re_Skilling_RegulatoryDesign,RegulatoryFailure,qc_SpotMarketShift,https://example.org/oe/enron/qc_RetailRateFreeze,InstitutionalContext,Retrospective
+market is working,EnronPublicPolicy,re_EnronPP_RegulationFailure,RegulatoryFailure,qc_SupplyShortfall,https://example.org/oe/enron/qc_SitingBlocked,InstitutionalContext,Presentist
+market is working,Kean,re_Kean_SupplyObstruction,RegulatoryObstructionOfSupply,qc_WholesalePriceRise,https://example.org/oe/enron/qc_SitingBlocked https://example.org/oe/enron/qc_SupplyShortfall,DialogicContext,Presentist
+market is working,SacBee,re_SacBee_Manipulation,SellerManipulation,qc_WholesalePriceRise,https://example.org/oe/enron/qc_SellerMarketPower,InstitutionalContext,Retrospective

@@ -1,0 +1,18 @@
+# OEO -- query over the union of ontology and instance data; no OWL entailment required.
+# CQ3: Which InterpretationStatements have identical wording but differ in Context, InterpretationType,
+#      TemporalOrientation, or InterpretationCriterion?  (identical = same lexical form and language tag)
+PREFIX oe: <https://example.org/oe#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?s1 ?s2 ?wording ?diffContext ?diffType ?diffOrientation ?diffCriterion WHERE {
+  ?s1 oe:literalForm ?l1 ; prov:wasGeneratedBy ?a1 . ?s2 oe:literalForm ?l2 ; prov:wasGeneratedBy ?a2 .
+  FILTER(STR(?s1) < STR(?s2)) FILTER(STR(?l1) = STR(?l2) && LANG(?l1) = LANG(?l2)) BIND(STR(?l1) AS ?wording)
+  OPTIONAL { ?a1 oe:producedIn ?c1 } OPTIONAL { ?a2 oe:producedIn ?c2 }
+  OPTIONAL { ?a1 oe:hasInterpretationType ?t1 } OPTIONAL { ?a2 oe:hasInterpretationType ?t2 }
+  OPTIONAL { ?a1 oe:hasTemporalOrientation ?o1 } OPTIONAL { ?a2 oe:hasTemporalOrientation ?o2 }
+  OPTIONAL { ?a1 oe:hasInterpretationCriterion ?k1 } OPTIONAL { ?a2 oe:hasInterpretationCriterion ?k2 }
+  BIND(COALESCE(?c1 != ?c2, BOUND(?c1) != BOUND(?c2)) AS ?diffContext)
+  BIND(COALESCE(?t1 != ?t2, BOUND(?t1) != BOUND(?t2)) AS ?diffType)
+  BIND(COALESCE(?o1 != ?o2, BOUND(?o1) != BOUND(?o2)) AS ?diffOrientation)
+  BIND(COALESCE(?k1 != ?k2, BOUND(?k1) != BOUND(?k2)) AS ?diffCriterion)
+  FILTER(?diffContext || ?diffType || ?diffOrientation || ?diffCriterion)
+} ORDER BY ?s1 ?s2
